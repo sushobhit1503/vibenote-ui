@@ -4,6 +4,8 @@ import { Button } from '@mui/material';
 import { useState } from 'react';
 import {lightMode, darkMode} from './theme';
 import { Typography } from '@mui/material';
+import InputSlider from './Components/InputSlider';
+import InputDropDown from './Components/InputDropDown';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
             Toggle {isDarkMode ? 'Dark' : 'Light'}
           </Button>
           <Typography variant='subHeader'>Hello</Typography>
+          <InputSlider />
+          <InputDropDown />
         </div>
       </ThemeProvider>
     </div>
