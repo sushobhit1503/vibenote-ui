@@ -1,9 +1,9 @@
 import { Slider } from '@mui/material'
 import React from 'react'
 
-const CustomSliderStyles = {
+const CustomSliderStyles = (theme) => ({
     '& .MuiSlider-thumb': {
-    color: "#feecff",
+    color: theme.palette.text.main,
     width: 8,
     height: 8,
     '&:hover': {
@@ -11,7 +11,7 @@ const CustomSliderStyles = {
     },
     },
     '& .MuiSlider-track': {
-      color: "#feecff",
+      color: theme.palette.text.main,
       width: 116,
       height: 3
     },
@@ -21,19 +21,19 @@ const CustomSliderStyles = {
       height: 3
     },
     '& .MuiSlider-active': {
-        color: "#feecff"
+        color: theme.palette.text.main
   },
   width: 116,
   height: 3,
   margin: 4,
-};
+});
 
-const InputSlider = (props) => {
+const InputSlider = ({ theme }) => {
   return (
     <div>
       <Slider
-        {...props}
-        sx={CustomSliderStyles}
+        {...theme}
+        sx={CustomSliderStyles(theme)}
       />
     </div>
   );

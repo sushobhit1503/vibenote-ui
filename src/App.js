@@ -6,6 +6,7 @@ import {lightMode, darkMode} from './theme';
 import { Typography } from '@mui/material';
 import InputSlider from './Components/InputSlider';
 import InputDropDown from './Components/InputDropDown';
+import Search from './Components/Search';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     setIsDarkMode(!isDarkMode)
   }
 
-  const themeSelected = isDarkMode ? darkMode : lightMode
+  const themeSelected = isDarkMode ? lightMode : darkMode
 
   const backgroundStyles = {
     background: themeSelected.palette.primaryGradient.main,
@@ -26,12 +27,16 @@ function App() {
     <div>
       <ThemeProvider theme={themeSelected}>
         <div style={backgroundStyles}>
+
           <Button onClick={toggleTheme} style={{color : themeSelected.palette.tertiary.main}}>
             Toggle {isDarkMode ? 'Dark' : 'Light'}
           </Button>
-          <Typography variant='subHeader'>Hello</Typography>
-          <InputSlider />
-          <InputDropDown />
+
+          <InputSlider theme = { themeSelected } />
+          <InputDropDown theme = { themeSelected } />
+          <hr></hr>
+          <Search theme={themeSelected} />
+          
         </div>
       </ThemeProvider>
     </div>

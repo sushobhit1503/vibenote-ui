@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import Select from '@mui/material/Select';
+import { FormControl, InputLabel } from '@mui/material';
 
-const dropDownStyle = {
+const dropDownStyle = (theme) => ({
   width: 298,
   height: 50,
-  backgroundColor: "#feecff",
+  backgroundColor: theme.palette.text.main,
   "& .MuiSvgIcon-root": {
-    color: "#2c022e",
+        color: theme.palette.background.main,
     },
+  color: theme.palette.background.main
 //     "& input::placeholder": {
 //     color: "black", 
 //   },
-};
+});
 
-const InputDropDown = () => {
+const InputDropDown = ({ theme }) => {
+    console.log(theme);
+
   const [occasion, setOccasion] = useState("Choose Occasion");
 
   const handleChange = (e) => {
@@ -21,13 +25,17 @@ const InputDropDown = () => {
   };
 
     return (
-    <Select
-        variant="outlined"
-        sx={dropDownStyle}
-        value={occasion}
-        onChange={handleChange}
-      >
-    </Select>
+        <FormControl>
+            <Select
+                placeholder='Hello'
+                id="dropdown"
+                value={occasion}
+                label="Occasion"
+                onChange={handleChange}
+                sx={dropDownStyle(theme)}
+            >
+            </Select>
+        </FormControl>
   );
 };
 
