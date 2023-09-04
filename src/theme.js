@@ -34,7 +34,7 @@ const blackColors = {
 }
 
 const primaryGradient = {
-    light: 'linear-gradient(0deg, #2C022E, #57045A)',
+    light: 'linear-gradient(180deg, #FEECFF, #FFFDFF',
     dark: 'linear-gradient(180deg, #2C022E, #57045A)'
 }
 

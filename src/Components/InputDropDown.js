@@ -26,8 +26,9 @@ const InputDropDown = ({ theme }) => {
 
     return (
         <FormControl>
+            {/* <InputLabel>Choose</InputLabel> */}
             <Select
-                placeholder='Hello'
+                // placeholder='Hello'
                 id="dropdown"
                 value={occasion}
                 label="Occasion"

@@ -7,7 +7,7 @@ const CustomSliderStyles = (theme) => ({
     width: 8,
     height: 8,
     '&:hover': {
-      boxShadow: '0px 0px 5px 2px rgba(255, 236, 255, 0.5)',
+      boxShadow: `0px 0px 5px 2px rgba(${theme.palette.text.main}, 0.5)`,
     },
     },
     '& .MuiSlider-track': {
@@ -16,7 +16,7 @@ const CustomSliderStyles = (theme) => ({
       height: 3
     },
     '& .MuiSlider-rail': {
-      color: 'rgba(255, 236, 255, 0.2)',
+      color: `rgba(${theme.palette.text.main}, 0.2)`,
       width: 116,
       height: 3
     },
