@@ -15,20 +15,20 @@ const dropDownStyle = (theme) => ({
 //   },
 });
 
-const InputDropDown = ({ theme }) => {
-    console.log(theme);
+const InputDropDown = ({ text, theme }) => {
 
-  const [occasion, setOccasion] = useState("Choose Occasion");
+  const [occasion, setOccasion] = useState();
 
   const handleChange = (e) => {
     setOccasion(e.target.value);
   };
 
+// issue: placeholder not appearing
     return (
         <FormControl>
             {/* <InputLabel>Choose</InputLabel> */}
             <Select
-                // placeholder='Hello'
+                placeholder={text}
                 id="dropdown"
                 value={occasion}
                 label="Occasion"
