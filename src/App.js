@@ -3,9 +3,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { lightMode, darkMode } from './theme';
-import { Typography } from '@mui/material';
-import InputSlider from './components/InputSlider';
-import InputDropDown from './components/InputDropDown';
 import SongSelection from './page/SongSelection';
 
 function App() {
@@ -16,11 +13,19 @@ function App() {
     setIsDarkMode(!isDarkMode)
   }
 
-  const themeSelected = isDarkMode ? darkMode : lightMode
+  const themeSelected = isDarkMode ? lightMode : darkMode
 
   const backgroundStyles = {
     background: themeSelected.palette.primaryGradient.main,
     minHeight: '100vh',
+  }
+
+// to be removed
+  const containerStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: 10,
+    gap: '16px',
   }
 
   return (
@@ -33,7 +38,7 @@ function App() {
           {/* <Typography variant='subHeader'>Hello</Typography>
           <InputSlider />
           <InputDropDown /> */}
-          <SongSelection />
+          <SongSelection theme={themeSelected} />
         </div>
       </ThemeProvider>
     </div>

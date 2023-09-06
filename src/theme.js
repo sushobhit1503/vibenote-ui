@@ -3,24 +3,39 @@ import { typographyStyles } from "./typography";
 
 
 // Colors
-const primaryColors = {
+const textColors = {
+    light: '#2C022E',
+    dark: '#FEECFF'
+}
+
+const backgroundColors = {
     light: '#FEECFF',
     dark: '#2C022E'
 }
 
 const secondaryColors = {
-    light: '#57045A',
+    light: '#FFFDFF',
     dark: '#57045A'
 }
 
 const tertiaryColors = {
-    light: '#FFB954',
+    light: '#5C3E7E',
     dark: '#FFB954'
 }
 
+const whiteColors = {
+    light: '#EFEFEF',
+    dark: '#212121'
+}
+
+const blackColors = {
+    light: '#212121',
+    dark: '#EFEFEF'
+}
+
 const primaryGradient = {
-    light: 'linear-gradient(0deg, #2C022E, #57045A)',
-    dark: 'linear-gradient(0deg, #57045A, #2C022E)'
+    light: 'linear-gradient(180deg, #FEECFF, #FFFDFF',
+    dark: 'linear-gradient(180deg, #2C022E, #57045A)'
 }
 
 // Light Mode
@@ -31,14 +46,23 @@ const lightMode = createTheme({
     },
     palette: {
         mode: 'light',
-        primary: {
-            main: primaryColors.light
+        text: {
+            main: textColors.light
+        },
+        background: {
+            main: backgroundColors.light
         },
         secondary: {
             main: secondaryColors.light
         },
         tertiary: {
             main: tertiaryColors.light
+        },
+        white: {
+            main: whiteColors.light
+        },
+        black: {
+            main: blackColors.light
         },
         primaryGradient: {
             main: primaryGradient.light
@@ -54,14 +78,23 @@ const darkMode = createTheme({
     },
     palette: {
         mode: 'dark',
-        primary: {
-            main: primaryColors.dark
+        text: {
+            main: textColors.dark
+        },
+        background: {
+            main: backgroundColors.dark
         },
         secondary: {
             main: secondaryColors.dark
         },
         tertiary: {
             main: tertiaryColors.dark
+        },
+        white: {
+            main: whiteColors.dark
+        },
+        black: {
+            main: blackColors.dark
         },
         primaryGradient: {
             main: primaryGradient.dark

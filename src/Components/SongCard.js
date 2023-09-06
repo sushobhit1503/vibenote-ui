@@ -1,16 +1,29 @@
-import { Container, Stack } from '@mui/material'
 import React from 'react'
-import InputDropDown from '../components/InputDropDown';
+import { Card, Box, CardContent, Typography, CardMedia } from "@mui/material"
+import SongCover from "../svgIcons/song-image.svg"
 
-const SongSelection = (props) => {
+const SongCard = (props) => {
     return (
-        <Container>
-            <Stack>
-                <InputDropDown inputText="Search Song" />
-            </Stack>
-        </Container>
+        <Card sx={{ display: 'flex' }}>
+            <CardMedia
+                component="img"
+                sx={{ padding: "16px", width: "150px" }}
+                image={SongCover}
+                alt="Jadui"
+            />
+            <Box>
+                <CardContent>
+                    <Typography variant='subHeader'>
+                        Jaadui (Tu Jhooti Mein Makkar)
+                    </Typography>
+                    <Typography variant="subHeader_1">
+                        Arijit Singh
+                    </Typography>
+                </CardContent>
+            </Box>
+        </Card>
     );
 };
 
 
-export default SongSelection
+export default SongCard
