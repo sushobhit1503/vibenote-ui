@@ -1,11 +1,12 @@
-import './App.css'; 
+import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
 import { Button } from '@mui/material';
 import { useState } from 'react';
-import {lightMode, darkMode} from './theme';
+import { lightMode, darkMode } from './theme';
 import { Typography } from '@mui/material';
-import InputSlider from './Components/InputSlider';
-import InputDropDown from './Components/InputDropDown';
+import InputSlider from './components/InputSlider';
+import InputDropDown from './components/InputDropDown';
+import SongSelection from './page/SongSelection';
 
 function App() {
 
@@ -26,12 +27,13 @@ function App() {
     <div>
       <ThemeProvider theme={themeSelected}>
         <div style={backgroundStyles}>
-          <Button onClick={toggleTheme} style={{color : themeSelected.palette.tertiary.main}}>
+          <Button onClick={toggleTheme} style={{ color: themeSelected.palette.tertiary.main }}>
             Toggle {isDarkMode ? 'Dark' : 'Light'}
           </Button>
-          <Typography variant='subHeader'>Hello</Typography>
+          {/* <Typography variant='subHeader'>Hello</Typography>
           <InputSlider />
-          <InputDropDown />
+          <InputDropDown /> */}
+          <SongSelection />
         </div>
       </ThemeProvider>
     </div>

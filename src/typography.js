@@ -28,7 +28,7 @@ const typographyStyles = {
             weight: fontWeight.light_weight,
         }
     },
-    
+
     subHeader_1: {
         family: fontFamily.font_2,
         size: fontSize.size_2,

@@ -7,26 +7,26 @@ const dropDownStyle = {
   backgroundColor: "#feecff",
   "& .MuiSvgIcon-root": {
     color: "#2c022e",
-    },
-//     "& input::placeholder": {
-//     color: "black", 
-//   },
+  },
+  //     "& input::placeholder": {
+  //     color: "black", 
+  //   },
 };
 
-const InputDropDown = () => {
+const InputDropDown = (props) => {
   const [occasion, setOccasion] = useState("Choose Occasion");
 
   const handleChange = (e) => {
     setOccasion(e.target.value);
   };
 
-    return (
+  return (
     <Select
-        variant="outlined"
-        sx={dropDownStyle}
-        value={occasion}
-        onChange={handleChange}
-      >
+      variant="outlined"
+      sx={dropDownStyle}
+      value={props.inputText}
+      onChange={handleChange}
+    >
     </Select>
   );
 };

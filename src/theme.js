@@ -25,7 +25,7 @@ const primaryGradient = {
 
 // Light Mode
 const lightMode = createTheme({
-    
+
     typography: {
         ...typographyStyles
     },
@@ -35,7 +35,7 @@ const lightMode = createTheme({
             main: primaryColors.light
         },
         secondary: {
-            main: secondaryColors.light 
+            main: secondaryColors.light
         },
         tertiary: {
             main: tertiaryColors.light
@@ -48,7 +48,7 @@ const lightMode = createTheme({
 
 // Dark Mode
 const darkMode = createTheme({
-    
+
     typography: {
         ...typographyStyles
     },
@@ -58,7 +58,7 @@ const darkMode = createTheme({
             main: primaryColors.dark
         },
         secondary: {
-            main: secondaryColors.dark 
+            main: secondaryColors.dark
         },
         tertiary: {
             main: tertiaryColors.dark
