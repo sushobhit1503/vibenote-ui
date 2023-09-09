@@ -4,6 +4,7 @@ import { Button } from '@mui/material';
 import { useState } from 'react';
 import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
+import PlayAlong from './page/PlayAlong';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
           {/* <Typography variant='subHeader'>Hello</Typography>
           <InputSlider />
           <InputDropDown /> */}
-          <SongSelection theme={themeSelected} />
+          <PlayAlong theme={themeSelected} />
         </div>
       </ThemeProvider>
     </div>

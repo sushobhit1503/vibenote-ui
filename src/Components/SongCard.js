@@ -4,7 +4,7 @@ import SongCover from "../svgIcons/song-image.svg"
 
 const SongCard = (props) => {
     return (
-        <Card sx={{ display: 'flex' }}>
+        <Card theme={props.theme} sx={{ display: 'flex', margin: "16px" }}>
             <CardMedia
                 component="img"
                 sx={{ padding: "16px", width: "150px" }}
