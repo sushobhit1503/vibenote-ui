@@ -16,4 +16,4 @@ const Play = (props) => (
   </svg>
 );
 
-export { Play };
+export default Play;

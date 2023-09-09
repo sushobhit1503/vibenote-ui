@@ -16,4 +16,4 @@ const Metronome = (props) => (
   </svg>
 );
 
-export { Metronome };
+export default Metronome;

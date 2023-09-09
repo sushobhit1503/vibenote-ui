@@ -24,8 +24,7 @@ const CustomSliderStyles = (theme) => ({
         color: theme.palette.text.main
   },
   width: 116,
-  height: 3,
-  margin: 4,
+  height: 3
 });
 
 const InputSlider = ({ theme }) => {

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Concert = (props) => (
+const Electric = (props) => (
   <svg
     width={38}
     height={39}
@@ -28,4 +28,4 @@ const Concert = (props) => (
   </svg>
 );
 
-export { Concert };
+export default Electric;

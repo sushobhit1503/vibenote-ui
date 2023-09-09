@@ -70,4 +70,4 @@ const Flat = (props) => (
   </svg>
 );
 
-export { Flat };
+export default Flat;

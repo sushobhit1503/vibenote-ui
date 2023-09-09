@@ -24,4 +24,4 @@ const Loop = (props) => (
   </svg>
 );
 
-export { Loop };
+export default Loop;

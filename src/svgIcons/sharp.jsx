@@ -16,4 +16,4 @@ const Sharp = (props) => (
   </svg>
 );
 
-export { Sharp };
+export default Sharp;

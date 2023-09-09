@@ -32,4 +32,4 @@ const Acoustic = (props) => (
   </svg>
 );
 
-export { Acoustic };
+export default Acoustic;

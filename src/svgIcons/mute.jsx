@@ -16,4 +16,4 @@ const Mute = (props) => (
   </svg>
 );
 
-export { Mute };
+export default Mute;

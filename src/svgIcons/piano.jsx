@@ -64,4 +64,4 @@ const Piano = (props) => (
   </svg>
 );
 
-export { Piano };
+export default Piano;

@@ -27,4 +27,4 @@ const Plus = (props) => (
   </svg>
 );
 
-export { Plus };
+export default Plus;

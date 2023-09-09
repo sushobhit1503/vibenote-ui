@@ -36,4 +36,4 @@ const Drum = (props) => (
   </svg>
 );
 
-export { Drum };
+export default Drum;

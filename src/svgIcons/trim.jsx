@@ -30,4 +30,4 @@ const Trim = (props) => (
   </svg>
 );
 
-export { Trim };
+export default Trim;

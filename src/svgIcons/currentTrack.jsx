@@ -38,4 +38,4 @@ const CurrentTrack = (props) => (
   </svg>
 );
 
-export { CurrentTrack };
+export default CurrentTrack;
