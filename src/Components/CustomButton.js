@@ -21,11 +21,11 @@ const textStyles = (theme) => ({
 })
 
 const CustomButton = ({ text, theme }) => {
-  // console.log(theme.typography.subHeader);
+  console.log(theme.typography.subHeader);
   return (
     <div>
       <Button style={customStyles(theme)}>
-        <Typography sx={textStyles}>
+        <Typography sx={{color: theme.palette.background.main}} style={theme.typography.subHeader.bold}>
           {text}
         </Typography>
       </Button>

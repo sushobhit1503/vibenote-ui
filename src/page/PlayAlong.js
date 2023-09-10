@@ -14,52 +14,56 @@ import Trim from "../svgIcons/trim"
 import Loop from "../svgIcons/loop"
 import CurrentTrack from "../svgIcons/currentTrack"
 import Notes from "../svgIcons/Notes.png"
-import InputSlider from "../components/InputSlider"
+import InputSlider from "../Components/InputSlider"
 import { deepPurple } from '@mui/material/colors';
+import CustomIconButton from '../Components/CustomIconButton'
 
 const PlayAlong = (props) => {
+    const variant = props.theme.typography
+    const shade = props.theme.palette
+
     return (
         <Container maxWidth="xl">
             <Grid container spacing={2}>
                 <Grid item xs={9}>
-                    <Typography variant='subHeader_1'>DRUM NOTES</Typography>
+                    <Typography style={variant.header.bold} sx={{color: shade.text.main}}>DRUM NOTES</Typography>
                     <Box sx={{ maxHeight: "500px", overflow: "scroll", overflowX: "hidden" }}>
                         <img src={Notes} />
                         <img src={Notes} />
                         <img src={Notes} />
                     </Box>
                     <InputSlider theme={props.theme} />
-                    <Typography variant='subHeader'>
+                    <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                         3:26 / 5:26
                     </Typography>
                 </Grid>
                 <Grid item xs={3}>
-                    <Typography variant='subHeader_1'>SONG CONTROLS</Typography>
-                    <Card theme={props.theme}>
+                    <Typography style={variant.header.bold} sx={{color: shade.text.main}}>SONG CONTROLS</Typography>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
                         <Box>
                             <CardContent>
-                                <Typography variant='subHeader'>
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     Track Instruments
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <Box sx={{ margin: "0px 0px 16px 16px" }}>
-                            <Button variant="contained" sx={{ marginRight: "16px" }}><Drum /></Button>
-                            <Button variant="contained" sx={{ marginRight: "16px" }}><Piano /></Button>
-                            <Button variant="contained" sx={{ marginRight: "16px" }}><Acoustic /></Button>
-                            <Button variant="contained"><Electric /></Button>
+                        <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
+                            <CustomIconButton theme={props.theme} icon={ <Drum />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={ <Piano />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={ <Acoustic />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={ <Electric />} sx={{ marginRight: "16px" }}></CustomIconButton>
                         </Box>
                     </Card>
-                    <Card theme={props.theme} sx={{ marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}} >
                         <Box sx={{ display: "flex", justifyContent: "between" }}>
-                            <CardContent >
-                                <Typography variant='subHeader'>
-                                    Tranpose
+                            <Stack direction="row" sx={{ margin: "16px 0px 16px 16px" }} justifyContent="space-between">
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                    Transpose
                                 </Typography>
-                                <Typography variant='subHeader'>
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     G#
                                 </Typography>
-                            </CardContent>
+                            </Stack>
                         </Box>
                         <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
@@ -71,16 +75,16 @@ const PlayAlong = (props) => {
                             </Avatar>
                         </Stack>
                     </Card>
-                    <Card theme={props.theme} sx={{ marginTop: "16px" }}>
-                        <Box sx={{ display: "flex", justifyContent: "between" }}>
-                            <CardContent >
-                                <Typography variant='subHeader'>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
+                        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <Stack direction="row" sx={{ margin: "16px 0px 16px 16px" }} justifyContent="space-between">
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     Tempo
                                 </Typography>
-                                <Typography variant='subHeader'>
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     50%
                                 </Typography>
-                            </CardContent>
+                            </Stack>
                         </Box>
                         <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
@@ -92,34 +96,34 @@ const PlayAlong = (props) => {
                             </Avatar>
                         </Stack>
                     </Card>
-                    <Card theme={props.theme} sx={{ marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
                         <Box sx={{ display: "flex", justifyContent: "between" }}>
                             <CardContent >
-                                <Typography variant='subHeader'>
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     Track Controls
                                 </Typography>
                             </CardContent>
                         </Box>
                         <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <Box sx={{ margin: "0px 0px 16px 16px" }}>
-                                <Button variant="contained" sx={{ marginRight: "16px" }}><Metronome /></Button>
-                                <Button variant="contained" sx={{ marginRight: "16px" }}><CurrentTrack /></Button>
-                                <Button variant="contained" sx={{ marginRight: "16px" }}><Mute /></Button>
+                            <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
+                                <CustomIconButton theme={props.theme} icon={ <Metronome />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                <CustomIconButton theme={props.theme} icon={ <CurrentTrack />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                <CustomIconButton theme={props.theme} icon={ <Mute />} sx={{ marginRight: "16px" }}></CustomIconButton>
                             </Box>
                         </Stack>
                     </Card>
-                    <Card theme={props.theme} sx={{ marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
                         <Box sx={{ display: "flex", justifyContent: "between" }}>
                             <CardContent >
-                                <Typography variant='subHeader'>
+                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                                     Edit Controls
                                 </Typography>
                             </CardContent>
                         </Box>
                         <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <Box sx={{ margin: "0px 0px 16px 16px" }}>
-                                <Button variant="contained" sx={{ marginRight: "16px" }}><Trim /></Button>
-                                <Button variant="contained" sx={{ marginRight: "16px" }}><Loop /></Button>
+                            <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
+                                <CustomIconButton theme={props.theme} icon={ <Trim />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                <CustomIconButton theme={props.theme} icon={ <Loop />} sx={{ marginRight: "16px" }}></CustomIconButton>
                             </Box>
                         </Stack>
                     </Card>

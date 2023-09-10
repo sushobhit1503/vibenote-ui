@@ -1,7 +1,7 @@
 
 const fontWeight = {
-    bold_weight: 700,
-    light_weight: 400
+    bold: 700,
+    light: 400
 }
 
 const fontSize = {
@@ -19,79 +19,101 @@ const fontFamily = {
 const typographyStyles = {
 
     subHeader: {
-        family: fontFamily.font_2,
-        size: fontSize.size_1,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_1,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_1,
+            fontWeight: fontWeight.light
         }
+        
     },
 
     subHeader_1: {
-        family: fontFamily.font_2,
-        size: fontSize.size_2,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_2,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_2,
+            fontWeight: fontWeight.light
         }
     },
 
     subHeader_2: {
-        family: fontFamily.font_2,
-        size: fontSize.size_3,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_3,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_3,
+            fontWeight: fontWeight.light
         }
     },
 
     subHeader_3: {
-        family: fontFamily.font_2,
-        size: fontSize.size_4,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_4,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_2,
+            fontSize: fontSize.size_4,
+            fontWeight: fontWeight.light
         }
     },
 
     header: {
-        family: fontFamily.font_1,
-        size: fontSize.size_1,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_1,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_1,
+            fontWeight: fontWeight.light
         }
     },
 
     header_1: {
-        family: fontFamily.font_1,
-        size: fontSize.size_2,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_2,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_2,
+            fontWeight: fontWeight.light
         }
     },
 
     header_2: {
-        family: fontFamily.font_1,
-        size: fontSize.size_3,
         bold: {
-            weight: fontWeight.bold_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_3,
+            fontWeight: fontWeight.bold
         },
+
         light: {
-            weight: fontWeight.light_weight,
+            fontFamily: fontFamily.font_1,
+            fontSize: fontSize.size_3,
+            fontWeight: fontWeight.light
         }
     }
 

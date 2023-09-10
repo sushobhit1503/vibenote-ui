@@ -14,10 +14,12 @@ const customStyles = (theme) => ({
     fontFamily: theme.typography.subHeader_1.family,
     fontSize: theme.typography.subHeader_1.size,
     fontWeight: theme.typography.subHeader_1.light.weight,
+  
 })
 
 const UserInput = ({text, theme, countryCode, icon}) => {
   return (
+    <div>
     <TextField
       fullWidth
       variant="outlined"
@@ -25,13 +27,14 @@ const UserInput = ({text, theme, countryCode, icon}) => {
       InputProps={{
         startAdornment: (
           <>
-            {icon && <Search style={{ marginRight: 1 }} />}
+            {icon && <Search style={{ marginRight: "16px" }} />}
             {countryCode && <span style={{marginRight: 8}}>{countryCode}</span>}
           </>
           ),
           sx: customStyles(theme)
       }}
     />
+    </div>
   );
 };
 

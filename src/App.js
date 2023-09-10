@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
+import CustomButton from './Components/CustomButton';
 
 function App() {
 
