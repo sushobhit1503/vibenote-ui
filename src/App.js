@@ -6,6 +6,8 @@ import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
 import CustomButton from './Components/CustomButton';
+import Login from './page/Login';
+import SignUp from './page/SignUp';
 
 function App() {
 
@@ -40,7 +42,9 @@ function App() {
           {/* <Typography variant='subHeader'>Hello</Typography>
           <InputSlider />
           <InputDropDown /> */}
-          <PlayAlong theme={themeSelected} />
+          {/* <PlayAlong theme={themeSelected} /> */}
+          <Login theme={themeSelected} />
+          {/* <SignUp theme={themeSelected } /> */}
         </div>
       </ThemeProvider>
     </div>
