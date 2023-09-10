@@ -14,9 +14,9 @@ import Trim from "../svgIcons/trim"
 import Loop from "../svgIcons/loop"
 import CurrentTrack from "../svgIcons/currentTrack"
 import Notes from "../svgIcons/Notes.png"
-import InputSlider from "../Components/InputSlider"
+import InputSlider from "../components/InputSlider"
 import { deepPurple } from '@mui/material/colors';
-import CustomIconButton from '../Components/CustomIconButton'
+import CustomIconButton from '../components/CustomIconButton'
 
 const PlayAlong = (props) => {
     const variant = props.theme.typography
@@ -32,14 +32,14 @@ const PlayAlong = (props) => {
                         <img src={Notes} />
                         <img src={Notes} />
                     </Box>
-                    <InputSlider theme={props.theme} />
+                    <InputSlider theme={props.theme} width='100%' height='5px' thumbSize='16px'/>
                     <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                         3:26 / 5:26
                     </Typography>
                 </Grid>
                 <Grid item xs={3}>
                     <Typography style={variant.header.bold} sx={{color: shade.text.main}}>SONG CONTROLS</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px"}}>
                         <Box>
                             <CardContent>
                                 <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
@@ -69,7 +69,7 @@ const PlayAlong = (props) => {
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Flat />
                             </Avatar>
-                            <InputSlider theme={props.theme} />
+                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px'/>
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Sharp />
                             </Avatar>
@@ -90,7 +90,7 @@ const PlayAlong = (props) => {
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Minus />
                             </Avatar>
-                            <InputSlider theme={props.theme} />
+                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px'/>
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Plus />
                             </Avatar>

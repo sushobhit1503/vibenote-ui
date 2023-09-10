@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
-import CustomButton from './Components/CustomButton';
 import Login from './page/Login';
 import SignUp from './page/SignUp';
+import OTPpage from './page/OTPpage';
 
 function App() {
 
@@ -39,12 +39,11 @@ function App() {
           <Button onClick={toggleTheme} style={{ color: themeSelected.palette.tertiary.main }}>
             Toggle {isDarkMode ? 'Dark' : 'Light'}
           </Button>
-          {/* <Typography variant='subHeader'>Hello</Typography>
-          <InputSlider />
-          <InputDropDown /> */}
           {/* <PlayAlong theme={themeSelected} /> */}
-          <Login theme={themeSelected} />
+          <OTPpage theme={themeSelected} />
           {/* <SignUp theme={themeSelected } /> */}
+          {/* <Login theme={themeSelected} /> */}
+          {/* <SongSelection theme={themeSelected} /> */}
         </div>
       </ThemeProvider>
     </div>

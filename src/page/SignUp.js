@@ -1,10 +1,10 @@
 import { Box, Card, CardContent, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
 import Illustration from "../svgIcons/Illustration.png"
-import UserInput from '../Components/UserInput'
-import CustomButton from '../Components/CustomButton'
+import UserInput from '../components/UserInput'
+import CustomButton from '../components/CustomButton'
 
-const Login = (props) => {
+const SignUp = (props) => {
     const variant = props.theme.typography
     const shade = props.theme.palette
 
@@ -16,7 +16,7 @@ const Login = (props) => {
                 </Grid>
                 <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>SIGN UP</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }} >
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px" }} >
                         <Box>
                             <CardContent>
                                 <Typography style={variant.header.bold} sx={{color: shade.text.main}}>
@@ -30,7 +30,7 @@ const Login = (props) => {
                         <Box sx={{ margin: '16px', display: "flex", flexDirection: "column", gap: "32px" }}>
                             <UserInput text="Please enter your name" theme={props.theme} />
                             <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} />
-                            <CustomButton text="GET OTP" theme={props.theme} />
+                            <CustomButton text="GET OTP" theme={props.theme} color={ shade.tertiary.main }/>
                         </Box>
                     </Card>
                 </Grid>
@@ -40,4 +40,4 @@ const Login = (props) => {
 
 }
 
-export default Login
+export default SignUp

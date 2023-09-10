@@ -1,7 +1,7 @@
 import { Container, Stack, Typography } from '@mui/material'
 import React from 'react'
-import UserInput from "../Components/UserInput"
-import SongCard from '../Components/SongCard';
+import UserInput from "../components/UserInput"
+import SongCard from '../components/SongCard';
 
 const SongSelection = (props) => {
     const variant = props.theme.typography

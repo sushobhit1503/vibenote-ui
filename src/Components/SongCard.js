@@ -7,7 +7,7 @@ const SongCard = (props) => {
     const shade = props.theme.palette
 
     return (
-        <Card sx={{ display: 'flex', margin: "16px", padding: "16px", bgcolor: `${shade.text.main}33`}}>
+        <Card sx={{ display: 'flex', margin: "16px", padding: "16px", bgcolor: `${shade.text.main}33`, borderRadius: '8px'}}>
             <CardMedia
                 component="img"
                 sx={{width: "150px" }}

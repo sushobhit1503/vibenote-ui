@@ -1,30 +1,22 @@
 import React from 'react'
 import { Button, Typography } from '@mui/material';
 
-const customStyles = (theme) => ({
+const customStyles = (theme, color) => ({
     height: 50,
     borderRadius: 8,
     border: 'none',
-    backgroundColor: theme.palette.tertiary.main,
+    backgroundColor: color,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingRight: '16px',
+    paddingLeft: '16px'
 })
 
-const textStyles = (theme) => ({
-  color: theme.palette.background.main,
-  // ...theme.typography.subHeader,
-  fontFamily: theme.typography.subHeader.family,
-  fontSize: theme.typography.subHeader.size,
-  fontWeight: theme.typography.subHeader.bold.weight,
-  paddingLeft: 2,
-  paddingRight: 2
-})
 
-const CustomButton = ({ text, theme }) => {
-  console.log(theme.typography.subHeader);
+const CustomButton = ({ text, theme, color }) => {
   return (
     <div>
-      <Button style={customStyles(theme)}>
+      <Button style={customStyles(theme, color)}>
         <Typography sx={{color: theme.palette.background.main}} style={theme.typography.subHeader.bold}>
           {text}
         </Typography>
