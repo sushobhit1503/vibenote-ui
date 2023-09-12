@@ -7,6 +7,9 @@ import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
 import MenuBar from './components/MenuBar';
 import { Route, Routes } from 'react-router-dom';
+import Login from './page/Login';
+import SignUp from './page/SignUp';
+import OTPpage from './page/OTPpage';
 
 function App() {
 
@@ -92,6 +95,9 @@ function App() {
             <Route path="/play-along" element={<PlayAlong theme={themeSelected} />} />
             <Route path="/" exact element={<SongSelection theme={themeSelected} />} />
           </Routes>
+          <OTPpage theme={themeSelected} />
+          {/* <SignUp theme={themeSelected } /> */}
+          {/* <Login theme={themeSelected} /> */}
         </div>
       </ThemeProvider>
     </div>
