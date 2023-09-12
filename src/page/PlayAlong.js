@@ -14,9 +14,9 @@ import Trim from "../svgIcons/trim"
 import Loop from "../svgIcons/loop"
 import CurrentTrack from "../svgIcons/currentTrack"
 import Notes from "../svgIcons/Notes.png"
-import InputSlider from "../Components/InputSlider"
+import InputSlider from "../components/InputSlider"
 import { deepPurple } from '@mui/material/colors';
-import CustomIconButton from '../Components/CustomIconButton'
+import CustomIconButton from '../components/CustomIconButton'
 
 const PlayAlong = (props) => {
     const variant = props.theme.typography

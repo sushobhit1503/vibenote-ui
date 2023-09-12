@@ -5,12 +5,15 @@ import App from './App';
 import { lightMode, darkMode } from './theme';
 
 import { ThemeProvider } from '@mui/material/styles'
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider theme={darkMode}>
-    <App />
-  </ThemeProvider>
+  <BrowserRouter>
+    <ThemeProvider theme={darkMode}>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
