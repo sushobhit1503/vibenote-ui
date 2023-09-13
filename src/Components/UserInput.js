@@ -4,36 +4,36 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from '../svgIcons/search';
 
 const customStyles = (theme) => ({
-    width: 600,
-    height: 50,
-    backgroundColor: theme.palette.text.main,
-    '& .MuiSvgIcon-root': {
-        color: theme.palette.background.main
-    },
-    color: theme.palette.background.main,
-    fontFamily: theme.typography.subHeader_1.family,
-    fontSize: theme.typography.subHeader_1.size,
-    fontWeight: theme.typography.subHeader_1.light.weight,
-  
+  width: 600,
+  height: 50,
+  backgroundColor: theme.palette.text.main,
+  '& .MuiSvgIcon-root': {
+    color: theme.palette.background.main
+  },
+  color: theme.palette.background.main,
+  fontFamily: theme.typography.subHeader_1.family,
+  fontSize: theme.typography.subHeader_1.size,
+  fontWeight: theme.typography.subHeader_1.light.weight,
+
 })
 
-const UserInput = ({text, theme, countryCode, icon}) => {
+const UserInput = ({ text, theme, countryCode, icon }) => {
   return (
     <div>
-    <TextField
-      fullWidth
-      variant="outlined"
-      placeholder={text}
-      InputProps={{
-        startAdornment: (
-          <>
-            {icon && <Search style={{ marginRight: "16px" }} />}
-            {countryCode && <span style={{marginRight: 8}}>{countryCode}</span>}
-          </>
+      <TextField
+        fullWidth
+        variant="outlined"
+        placeholder={text}
+        InputProps={{
+          startAdornment: (
+            <>
+              {icon && <Search style={{ marginRight: "16px" }} />}
+              {countryCode && <span style={{ marginRight: 8 }}>{countryCode}</span>}
+            </>
           ),
           sx: customStyles(theme)
-      }}
-    />
+        }}
+      />
     </div>
   );
 };

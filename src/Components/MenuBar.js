@@ -1,15 +1,15 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button, Container, Typography, IconButton, Toolbar, Box, AppBar } from '@mui/material';
+import { Button, Typography, IconButton, Toolbar } from '@mui/material';
 import CustomButton from './CustomButton';
 
 const MenuBar = (props) => {
     const tertiaryColor = props.theme.palette.tertiary.main
 
     return (
-        <AppBar position="static" sx={{background: 'none', boxShadow: 'none'}}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <div position="static" sx={{background: 'none', boxShadow: 'none'}}>
+            <div>
+                <Toolbar>
                     <Typography
                         variant="h6"
                         noWrap
@@ -25,7 +25,7 @@ const MenuBar = (props) => {
                     >
                         VIBENOTE
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <div sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -36,7 +36,7 @@ const MenuBar = (props) => {
                             <MenuIcon />
                         </IconButton>
 
-                    </Box>
+                    </div>
                     <Typography
                         variant="h5"
                         noWrap
@@ -53,21 +53,21 @@ const MenuBar = (props) => {
                     >
                         VIBENOTE
                     </Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', ml: 'auto', mr: '-64px' }}>
-                        <Button href="/play-along" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
+                    <div style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', ml: 'auto', mr: '-64px' }}>
+                        <Button href="/play-along" sx={{ my: 2, color: tertiaryColor }}>
                             Play Along
                         </Button>
-                        <Button href="/karaoke" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
+                        <Button href="/karaoke" sx={{ my: 2, color: tertiaryColor }}>
                             Karaoke
                         </Button>
-                        <Button href="/stock-music" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
+                        <Button href="/stock-music" sx={{ my: 2, color: tertiaryColor }}>
                             Stock Music
                         </Button>
-                        <CustomButton text= "Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
-                    </Box>
+                        <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
+                    </div>
                 </Toolbar>
-            </Container>
-        </AppBar>
+            </div>
+        </div>
     );
 }
 export default MenuBar;

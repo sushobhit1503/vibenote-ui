@@ -8,13 +8,13 @@ const SongSelection = (props) => {
     const shade = props.theme.palette
 
     return (
-        <Container>
+        <div>
             <div style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
                 <UserInput text="Search any song" icon={true} theme={props.theme} />
             </div>
-            <Stack spacing={2} marginTop="16px" marginLeft="60px">
+            <div spacing={2} marginTop="16px" marginLeft="60px">
                 <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>MOST TRENDING SONGS</Typography>
-            </Stack>
+            </div>
             <Stack direction="row" flexWrap="wrap" justifyContent="center">
                 <SongCard theme={props.theme} />
                 <SongCard theme={props.theme} />
@@ -23,7 +23,7 @@ const SongSelection = (props) => {
                 <SongCard theme={props.theme} />
                 <SongCard theme={props.theme} />
             </Stack>
-        </Container>
+        </div>
     );
 };
 

@@ -94,7 +94,7 @@ function App() {
             <Route path="/karaoke" element={<Karaoke theme={themeSelected} />} />
           </Routes>
           {/* <OTPpage theme={themeSelected} /> */}
-          {/* <SignUp theme={themeSelected } /> */}
+          <SignUp theme={themeSelected } />
           {/* <Login theme={themeSelected} /> */}
         </div>
       </ThemeProvider>

@@ -1,4 +1,4 @@
-import { Grid, Typography, Container, Card, CardContent, Box, Button, Stack, Avatar } from '@mui/material'
+import {Typography, Card, CardContent, Avatar } from '@mui/material'
 import React from 'react'
 import Drum from "../svgIcons/drum"
 import Acoustic from "../svgIcons/acoustic"
@@ -23,113 +23,109 @@ const PlayAlong = (props) => {
     const shade = props.theme.palette
 
     return (
-        <Container maxWidth="xl" >
-            <Grid container spacing={2}>
-                <Grid item xs={9}>
-                    <Typography style={variant.header.bold} sx={{color: shade.text.main}}>DRUM NOTES</Typography>
-                    <Box sx={{ maxHeight: "500px", overflow: "scroll", overflowX: "hidden" }}>
+        <div maxWidth="xl" >
+            <div style={{ display: "flex" }} spacing={2}>
+                <div xs={9}>
+                    <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>DRUM NOTES</Typography>
+                    <div sx={{ maxHeight: "500px", overflow: "scroll", overflowX: "hidden" }}>
                         <img src={Notes} />
                         <img src={Notes} />
                         <img src={Notes} />
-                    </Box>
-                    <InputSlider theme={props.theme} width='100%' height='5px' thumbSize='16px'/>
-                    <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                    </div>
+                    <InputSlider theme={props.theme} width='100%' height='5px' thumbSize='16px' />
+                    <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                         3:26 / 5:26
                     </Typography>
-                </Grid>
-                <Grid item xs={3}>
-                    <Typography style={variant.header.bold} sx={{color: shade.text.main}}>SONG CONTROLS</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px"}}>
-                        <Box>
+                </div>
+                <div xs={3}>
+                    <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>SONG CONTROLS</Typography>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px" }}>
+                        <div>
                             <CardContent>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Track Instruments
                                 </Typography>
+                                <div style={{ display: "flex" }}>
+                                    <CustomIconButton theme={props.theme} icon={<Drum />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Piano />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Acoustic />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Electric />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                </div>
                             </CardContent>
-                        </Box>
-                        <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
-                            <CustomIconButton theme={props.theme} icon={ <Drum />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={ <Piano />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={ <Acoustic />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={ <Electric />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                        </Box>
+                        </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}} >
-                        <Box sx={{ display: "flex", justifyContent: "between" }}>
-                            <Stack direction="row" sx={{ margin: "16px 0px 16px 16px" }} justifyContent="space-between">
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }} >
+                        <div sx={{ display: "flex", justifyContent: "between" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "16px 0px 16px 16px" }}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Transpose
                                 </Typography>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     G#
                                 </Typography>
-                            </Stack>
-                        </Box>
-                        <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                            </div>
+                        </div>
+                        <div style={{ display: "flex" }} spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Flat />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px'/>
+                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Sharp />
                             </Avatar>
-                        </Stack>
+                        </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
-                        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                            <Stack direction="row" sx={{ margin: "16px 0px 16px 16px" }} justifyContent="space-between">
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                        <div sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "16px 0px 16px 16px" }}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Tempo
                                 </Typography>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     50%
                                 </Typography>
-                            </Stack>
-                        </Box>
-                        <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                            </div>
+                        </div>
+                        <div style={{ display: "flex" }} spacing={2} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Minus />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px'/>
+                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Plus />
                             </Avatar>
-                        </Stack>
+                        </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
-                        <Box sx={{ display: "flex", justifyContent: "between" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                        <div>
                             <CardContent >
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Track Controls
                                 </Typography>
                             </CardContent>
-                        </Box>
-                        <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
-                                <CustomIconButton theme={props.theme} icon={ <Metronome />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                <CustomIconButton theme={props.theme} icon={ <CurrentTrack />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                <CustomIconButton theme={props.theme} icon={ <Mute />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            </Box>
-                        </Stack>
+                        </div>
+                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                            <CustomIconButton theme={props.theme} icon={<Metronome />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<CurrentTrack />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<Mute />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                        </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px"}}>
-                        <Box sx={{ display: "flex", justifyContent: "between" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                        <div>
                             <CardContent >
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Edit Controls
                                 </Typography>
                             </CardContent>
-                        </Box>
-                        <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <Box sx={{ margin: "0px 0px 16px 16px" }} display= 'flex' gap='32px'>
-                                <CustomIconButton theme={props.theme} icon={ <Trim />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                <CustomIconButton theme={props.theme} icon={ <Loop />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            </Box>
-                        </Stack>
+                        </div>
+                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                            <CustomIconButton theme={props.theme} icon={<Trim />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<Loop />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                        </div>
                     </Card>
-                </Grid>
-            </Grid>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 };
 

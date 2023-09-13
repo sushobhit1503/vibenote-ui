@@ -14,7 +14,7 @@ const SongCard = (props) => {
                 image={SongCover}
                 alt="Jadui"
             />
-            <Box marginTop="0px">
+            <div>
                 <CardContent>
                     <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>
                         Jaadui (Tu Jhooti Mein Makkar)
@@ -23,7 +23,7 @@ const SongCard = (props) => {
                         Arijit Singh
                     </Typography>
                 </CardContent>
-            </Box>
+            </div>
         </Card>
     );
 };
