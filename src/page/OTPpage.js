@@ -9,7 +9,7 @@ const OTPpage = (props) => {
     const shade = props.theme.palette
 
     return (
-        <Container maxWidth="xl" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+        <Container maxWidth="xl" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', marginTop: "-48px" }}>
             <Grid container spacing={2} sx={{ width: '100%' }}>
                 <Grid item xs={6}>
                     <img src={Illustration} style={{width: '100%'}}/>

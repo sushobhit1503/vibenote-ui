@@ -3,17 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { lightMode, darkMode } from './theme';
-
 import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom';
+import { store } from './redux/store'
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <ThemeProvider theme={darkMode}>
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>
+  <Provider store = {store}>
+    <BrowserRouter>
+      <ThemeProvider theme={darkMode}>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
+  </Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

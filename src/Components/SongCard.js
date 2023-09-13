@@ -10,7 +10,7 @@ const SongCard = (props) => {
         <Card sx={{ display: 'flex', margin: "16px", padding: "16px", bgcolor: `${shade.text.main}33`, borderRadius: '8px'}}>
             <CardMedia
                 component="img"
-                sx={{width: "150px" }}
+                sx={{maxWidth: "150px" }}
                 image={SongCover}
                 alt="Jadui"
             />

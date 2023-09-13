@@ -1,7 +1,6 @@
 import './App.css';
 import { ThemeProvider, styled } from '@mui/material/styles';
-import { Button, FormGroup, FormControlLabel, Switch } from '@mui/material';
-import { useState } from 'react';
+import { FormGroup, FormControlLabel, Switch } from '@mui/material';
 import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
@@ -10,13 +9,18 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './page/Login';
 import SignUp from './page/SignUp';
 import OTPpage from './page/OTPpage';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMode } from './redux/action';
+
 
 function App() {
 
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const isDarkMode = useSelector((state) => state.themeReducer.isDarkMode)
+  // console.log(isDarkMode);
+  const dispatch = useDispatch()
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
+    dispatch(toggleMode())
   }
 
   const themeSelected = isDarkMode ? lightMode : darkMode
@@ -24,14 +28,6 @@ function App() {
   const backgroundStyles = {
     background: themeSelected.palette.primaryGradient.main,
     minHeight: '100vh',
-  }
-
-  // to be removed
-  const containerStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    marginLeft: 10,
-    gap: '16px',
   }
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
