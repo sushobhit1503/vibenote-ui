@@ -1,6 +1,8 @@
-import { createStore } from "redux"
-import allReducers from "./reducers/allReducers"
+import { configureStore } from "@reduxjs/toolkit"
+import themeReducer from "./reducers/themeReducer"
 
-export const store = createStore(
-    allReducers,
-)
+export const store = configureStore({
+    reducer: {
+        theme: themeReducer
+    }
+})

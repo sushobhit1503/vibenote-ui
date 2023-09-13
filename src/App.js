@@ -10,12 +10,13 @@ import Login from './page/Login';
 import SignUp from './page/SignUp';
 import OTPpage from './page/OTPpage';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMode } from './redux/action';
+import { toggleMode } from './redux/reducers/themeReducer'
+import Karaoke from './page/Karaoke';
 
 
 function App() {
 
-  const isDarkMode = useSelector((state) => state.themeReducer.isDarkMode)
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode)
   // console.log(isDarkMode);
   const dispatch = useDispatch()
 
@@ -90,8 +91,9 @@ function App() {
           <Routes>
             <Route path="/play-along" element={<PlayAlong theme={themeSelected} />} />
             <Route path="/" exact element={<SongSelection theme={themeSelected} />} />
+            <Route path="/karaoke" element={<Karaoke theme={themeSelected} />} />
           </Routes>
-          <OTPpage theme={themeSelected} />
+          {/* <OTPpage theme={themeSelected} /> */}
           {/* <SignUp theme={themeSelected } /> */}
           {/* <Login theme={themeSelected} /> */}
         </div>

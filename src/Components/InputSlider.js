@@ -28,6 +28,7 @@ const CustomSliderStyles = (theme, width, height, thumbSize) => ({
 });
 
 const InputSlider = ({ theme, width, height, thumbSize }) => {
+
   return (
     <div>
       <Slider

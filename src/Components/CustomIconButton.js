@@ -1,9 +1,9 @@
 import { Button, IconButton } from '@mui/material'
 import React from 'react'
 
-const customStyles = (theme) => ({
-    width: 50,
-    height: 50,
+const customStyles = (theme, size) => ({
+    width: size || 50 ,
+    height: size || 50,
     backgroundColor: theme.palette.text.main,
     justifyContent: 'center',
     alignItems: 'center',
@@ -20,10 +20,11 @@ const customStyles = (theme) => ({
 })
 
 // issue: svg color fill not working
-const CustomIconButton = ({theme, icon}) => {
+const CustomIconButton = ({ theme, icon, size }) => {
+  console.log(size);
   return (
     <div>
-          <IconButton sx={customStyles(theme)}>
+          <IconButton sx={customStyles(theme, size)}>
                 {icon}
           </IconButton>
     </div>

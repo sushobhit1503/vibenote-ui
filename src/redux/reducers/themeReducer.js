@@ -1,14 +1,16 @@
-const initialState = {
-    isDarkMode: false,
-}
+import { createSlice } from "@reduxjs/toolkit";
 
-const themeReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "TOGGLE": 
-            return { ...state, isDarkMode: !state.isDarkMode }
-        default:
-            return state
+const themeReducer = createSlice({
+    name: 'TOGGLE',
+    initialState: {
+        isDarkMode: false
+    },
+    reducers: {
+        toggleMode: (state) => {
+            state.isDarkMode = !state.isDarkMode
+        }
     }
-}
+})
 
-export default themeReducer
+export const { toggleMode } = themeReducer.actions
+export default themeReducer.reducer

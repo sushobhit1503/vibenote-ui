@@ -53,12 +53,12 @@ const MenuBar = (props) => {
                     >
                         VIBENOTE
                     </Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', ml: 'auto' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', ml: 'auto', mr: '-64px' }}>
                         <Button href="/play-along" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
                             Play Along
                         </Button>
-                        <Button href="/karoake" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
-                            Karoake
+                        <Button href="/karaoke" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
+                            Karaoke
                         </Button>
                         <Button href="/stock-music" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
                             Stock Music
