@@ -1,10 +1,13 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Container, Typography, IconButton, Toolbar, Box, AppBar } from '@mui/material';
+import CustomButton from './CustomButton';
 
 const MenuBar = (props) => {
+    const tertiaryColor = props.theme.palette.tertiary.main
+
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{background: 'none', boxShadow: 'none'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -16,7 +19,7 @@ const MenuBar = (props) => {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color:  props.theme.palette.tertiary.main,
                             textDecoration: 'none',
                         }}
                     >
@@ -44,22 +47,23 @@ const MenuBar = (props) => {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: props.theme.palette.tertiary.main,
                             textDecoration: 'none',
                         }}
                     >
                         VIBENOTE
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <Button href="/play-along" sx={{ my: 2, color: 'white', display: 'block' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', ml: 'auto' }}>
+                        <Button href="/play-along" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
                             Play Along
                         </Button>
-                        <Button href="/karoake" sx={{ my: 2, color: 'white', display: 'block' }}>
+                        <Button href="/karoake" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
                             Karoake
                         </Button>
-                        <Button href="/stock-music" sx={{ my: 2, color: 'white', display: 'block' }}>
+                        <Button href="/stock-music" sx={{ my: 2, color: tertiaryColor, display: 'block' }}>
                             Stock Music
                         </Button>
+                        <CustomButton text= "Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
                     </Box>
                 </Toolbar>
             </Container>

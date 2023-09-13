@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Typography } from '@mui/material';
 
 const customStyles = (theme, color) => ({
-    height: 50,
+    height: 48,
     borderRadius: 8,
     border: 'none',
     backgroundColor: color,
