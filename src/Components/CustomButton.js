@@ -8,8 +8,8 @@ const customStyles = (theme, color) => ({
     backgroundColor: color,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingRight: '16px',
-    paddingLeft: '16px'
+    paddingRight: '1rem',
+    paddingLeft: '1rem'
 })
 
 

@@ -1,0 +1,33 @@
+.main-container {
+    margin: 0rem 4rem;
+}
+
+.flex-align-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* PADDING STYLES */
+
+.padding-top-max {
+    padding-top: 1rem;
+}
+
+.padding-top-min {
+    padding-top: 0.5rem;
+}
+
+.remove-padding {
+    padding: 0px;
+}
+
+.toolbar-height {
+    height: 3.125rem;
+}
+
+.toolbar-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
