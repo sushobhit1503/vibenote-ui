@@ -10,22 +10,22 @@ const MenuBar = (props) => {
     const tertiaryColor = props.theme.palette.tertiary.main
     const typography = props.theme.typography.subHeader.light
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = React.useState(true);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-    
+
 
     const buttonLinkStyles = () => ({
-            color: tertiaryColor,
-            fontFamily: typography,
-            textTransform: 'none',
-            position: 'relative',
-            '&:hover': {
-                textDecoration: 'none',
-                backgroundColor: 'transparent'
-            },
-            '&::after': {
+        color: tertiaryColor,
+        fontFamily: typography,
+        textTransform: 'none',
+        position: 'relative',
+        '&:hover': {
+            textDecoration: 'none',
+            backgroundColor: 'transparent'
+        },
+        '&::after': {
             content: '""',
             position: 'absolute',
             width: '100%',
@@ -33,26 +33,26 @@ const MenuBar = (props) => {
             height: '2px',
             bottom: '0',
             left: '0',
-            backgroundColor: tertiaryColor, 
+            backgroundColor: tertiaryColor,
             transformOrigin: 'bottom right',
             transition: 'transform 0.2s ease-out',
-            },
-            '&:hover::after': {
+        },
+        '&:hover::after': {
             transform: 'scaleX(1)',
             transformOrigin: 'bottom left',
-            },
+        },
     })
     return (
         <div className="main-container padding-top-max">
             <Toolbar className={`flex-align-between toolbar-height`}>
                 <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} >
                     <IconButton
-                    size="large"
-                    aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
-                    onClick={toggleMenu}
-                    color={tertiaryColor}
+                        size="large"
+                        aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+                        onClick={toggleMenu}
+                        color={tertiaryColor}
                     >
-                    {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                        {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
                     </IconButton>
                 </div>
                 <Typography
@@ -70,18 +70,7 @@ const MenuBar = (props) => {
                 >
                     VIBENOTE
                 </Typography>
-                {/* <div sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        color={tertiaryColor}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </div> */}
-                {/* <Typography
+                <Typography
                     variant="h5"
                     noWrap
                     component="a"
@@ -92,27 +81,22 @@ const MenuBar = (props) => {
                         flexGrow: 1,
                         letterSpacing: '.3rem',
                         color: props.theme.palette.tertiary.main,
-                        textDecoration: 'none',
-                    }}
+                        textDecoration: 'none'                    }}
                 >
                     VIBENOTE
-                </Typography> */}
+                </Typography>
                 <div className={`toolbar-options`} >
-                    {isMenuOpen && (
-                        <>
-                            <Button href="/play-along" sx={buttonLinkStyles}>
-                                Play Along
-                            </Button>
-                            <Button href="/karaoke" sx={buttonLinkStyles}>
-                                Karaoke
-                            </Button>
-                            <Button href="/stock-music" sx={buttonLinkStyles}>
-                                Stock Music
-                            </Button>
-                            <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
-                        </>
-                    )}
-                </div>                
+                    <Button href="/play-along" sx={buttonLinkStyles}>
+                        Play Along
+                    </Button>
+                    <Button href="/karaoke" sx={buttonLinkStyles}>
+                        Karaoke
+                    </Button>
+                    <Button href="/stock-music" sx={buttonLinkStyles}>
+                        Stock Music
+                    </Button>
+                    <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
+                </div>
             </Toolbar>
         </div>
     );
