@@ -83,18 +83,18 @@ function App() {
       <ThemeProvider theme={themeSelected}>
         <div style={backgroundStyles}>
           <MenuBar theme={themeSelected} />
-          <FormGroup>
+          {/* <FormGroup>
             <FormControlLabel onChange={toggleTheme} checked={!isDarkMode}
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
             />
-          </FormGroup>
+          </FormGroup> */}
           <Routes>
             <Route path="/play-along" element={<PlayAlong theme={themeSelected} />} />
-            <Route path="/" exact element={<SongSelection theme={themeSelected} />} />
+            <Route path="/song" exact element={<SongSelection theme={themeSelected} />} />
             <Route path="/karaoke" element={<Karaoke theme={themeSelected} />} />
           </Routes>
           {/* <OTPpage theme={themeSelected} /> */}
-          <SignUp theme={themeSelected } />
+          {/* <SignUp theme={themeSelected } /> */}
           {/* <Login theme={themeSelected} /> */}
         </div>
       </ThemeProvider>

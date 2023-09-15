@@ -27,36 +27,36 @@ const PlayAlong = (props) => {
             <div style={{ display: "flex" }} spacing={2}>
                 <div xs={9}>
                     <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>DRUM NOTES</Typography>
-                    <div sx={{ maxHeight: "500px", overflow: "scroll", overflowX: "hidden" }}>
+                    <div sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden" }}>
                         <img src={Notes} />
                         <img src={Notes} />
                         <img src={Notes} />
                     </div>
-                    <InputSlider theme={props.theme} width='100%' height='5px' thumbSize='16px' />
+                    <InputSlider theme={props.theme} width='100%' height='0.313rem' thumbSize='1rem' />
                     <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                         3:26 / 5:26
                     </Typography>
                 </div>
                 <div xs={3}>
                     <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>SONG CONTROLS</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }}>
                         <div>
                             <CardContent>
                                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Track Instruments
                                 </Typography>
                                 <div style={{ display: "flex" }}>
-                                    <CustomIconButton theme={props.theme} icon={<Drum />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                    <CustomIconButton theme={props.theme} icon={<Piano />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                    <CustomIconButton theme={props.theme} icon={<Acoustic />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                                    <CustomIconButton theme={props.theme} icon={<Electric />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Drum />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Piano />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Acoustic />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                    <CustomIconButton theme={props.theme} icon={<Electric />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                                 </div>
                             </CardContent>
                         </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }} >
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }} >
                         <div sx={{ display: "flex", justifyContent: "between" }}>
-                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "16px 0px 16px 16px" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "1rem 0px 1rem 1rem" }}>
                                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Transpose
                                 </Typography>
@@ -65,19 +65,19 @@ const PlayAlong = (props) => {
                                 </Typography>
                             </div>
                         </div>
-                        <div style={{ display: "flex" }} spacing={2} direction="row" sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                        <div style={{ display: "flex" }} spacing={2} direction="row" sx={{ margin: "0px 0px 1rem 1rem" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Flat />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px' />
+                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Sharp />
                             </Avatar>
                         </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }}>
                         <div sx={{ display: "flex", justifyContent: "space-between" }}>
-                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "16px 0px 16px 16px" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between" }} sx={{ margin: "1rem 0px 1rem 1rem" }}>
                                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Tempo
                                 </Typography>
@@ -86,17 +86,17 @@ const PlayAlong = (props) => {
                                 </Typography>
                             </div>
                         </div>
-                        <div style={{ display: "flex" }} spacing={2} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
+                        <div style={{ display: "flex" }} spacing={2} sx={{ margin: "0px 0px 1rem 1rem" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Minus />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='116px' height='3px' thumbSize='8px' />
+                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Plus />
                             </Avatar>
                         </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }}>
                         <div>
                             <CardContent >
                                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
@@ -104,13 +104,13 @@ const PlayAlong = (props) => {
                                 </Typography>
                             </CardContent>
                         </div>
-                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <CustomIconButton theme={props.theme} icon={<Metronome />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={<CurrentTrack />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={<Mute />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 1rem 1rem" }} alignItems="center">
+                            <CustomIconButton theme={props.theme} icon={<Metronome />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<CurrentTrack />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<Mute />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                         </div>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px" }}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }}>
                         <div>
                             <CardContent >
                                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
@@ -118,9 +118,9 @@ const PlayAlong = (props) => {
                                 </Typography>
                             </CardContent>
                         </div>
-                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 16px 16px" }} alignItems="center">
-                            <CustomIconButton theme={props.theme} icon={<Trim />} sx={{ marginRight: "16px" }}></CustomIconButton>
-                            <CustomIconButton theme={props.theme} icon={<Loop />} sx={{ marginRight: "16px" }}></CustomIconButton>
+                        <div style={{ display: "flex" }} sx={{ margin: "0px 0px 1rem 1rem" }} alignItems="center">
+                            <CustomIconButton theme={props.theme} icon={<Trim />} sx={{ marginRight: "1rem" }}></CustomIconButton>
+                            <CustomIconButton theme={props.theme} icon={<Loop />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                         </div>
                     </Card>
                 </div>

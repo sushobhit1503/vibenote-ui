@@ -12,7 +12,7 @@ const SongSelection = (props) => {
             <div style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
                 <UserInput text="Search any song" icon={true} theme={props.theme} />
             </div>
-            <div spacing={2} marginTop="16px" marginLeft="60px">
+            <div spacing={2} marginTop="1rem" marginLeft="3.75rem">
                 <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>MOST TRENDING SONGS</Typography>
             </div>
             <Stack direction="row" flexWrap="wrap" justifyContent="center">

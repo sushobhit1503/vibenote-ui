@@ -17,7 +17,7 @@ const CustomButton = ({ text, theme, color }) => {
   return (
     <div>
       <Button style={customStyles(theme, color)}>
-        <Typography sx={{color: theme.palette.background.main}} style={theme.typography.subHeader.bold}>
+        <Typography sx={{color: theme.palette.background.main, textTransform: 'none'}} style={theme.typography.subHeader.bold}>
           {text}
         </Typography>
       </Button>

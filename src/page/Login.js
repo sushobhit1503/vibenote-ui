@@ -16,7 +16,7 @@ const Login = (props) => {
                 </div>
                 <div xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>GET OTP</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "16px", borderRadius: "8px" }} >
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }} >
                         <div>
                             <CardContent>
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>

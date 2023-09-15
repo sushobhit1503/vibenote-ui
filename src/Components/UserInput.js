@@ -27,7 +27,7 @@ const UserInput = ({ text, theme, countryCode, icon }) => {
         InputProps={{
           startAdornment: (
             <>
-              {icon && <Search style={{ marginRight: "16px" }} />}
+              {icon && <Search style={{ marginRight: "1rem" }} />}
               {countryCode && <span style={{ marginRight: 8 }}>{countryCode}</span>}
             </>
           ),

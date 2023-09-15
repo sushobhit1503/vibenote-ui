@@ -2,10 +2,37 @@ import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Typography, IconButton, Toolbar } from '@mui/material';
 import CustomButton from './CustomButton';
-
+import '../styles/theme-main.css'
 const MenuBar = (props) => {
     const tertiaryColor = props.theme.palette.tertiary.main
     const typography = props.theme.typography.subHeader.light
+
+    const buttonLinkStyles = () => ({
+            color: tertiaryColor,
+            fontFamily: typography,
+            textTransform: 'none',
+            position: 'relative',
+            '&:hover': {
+                textDecoration: 'none',
+                backgroundColor: 'transparent'
+            },
+            '&::after': {
+            content: '""',
+            position: 'absolute',
+            width: '100%',
+            transform: 'scaleX(0)',
+            height: '2px',
+            bottom: '0',
+            left: '0',
+            backgroundColor: tertiaryColor, 
+            transformOrigin: 'bottom right',
+            transition: 'transform 0.2s ease-out',
+            },
+            '&:hover::after': {
+            transform: 'scaleX(1)',
+            transformOrigin: 'bottom left',
+            },
+    })
     return (
         <div className="main-container padding-top-max">
             <Toolbar className='flex-align-between toolbar-height'>
@@ -36,7 +63,7 @@ const MenuBar = (props) => {
                     </IconButton>
 
                 </div> */}
-                <Typography
+                {/* <Typography
                     variant="h5"
                     noWrap
                     component="a"
@@ -51,15 +78,16 @@ const MenuBar = (props) => {
                     }}
                 >
                     VIBENOTE
-                </Typography>
+                </Typography> */}
                 <div className='toolbar-options'>
-                    <Button href="/play-along" sx={{color: tertiaryColor, fontFamily: typography }}>
+                    <Button href="/play-along" sx={buttonLinkStyles}>
                         Play Along
                     </Button>
-                    <Button href="/karaoke" sx={{color: tertiaryColor, fontFamily: typography }}>
+                    <Button href="/karaoke" sx={buttonLinkStyles}>
                         Karaoke
                     </Button>
-                    <Button href="/stock-music" sx={{color: tertiaryColor, fontFamily: typography }}>
+                    <Button href="/stock-music"
+                      sx={buttonLinkStyles}>
                         Stock Music
                     </Button>
                     <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
