@@ -32,7 +32,18 @@
     gap: 1rem;
 }
 
+@media(min-width:600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
 @media (max-width: 600px){
+
+    .menu-icon.open {
+        display: flex;
+        align-items: left;
+    }
     .toolbar-height{
         display: flex;
         flex-direction: column;
@@ -50,3 +61,4 @@
         width: 100%;
     }
 }
+

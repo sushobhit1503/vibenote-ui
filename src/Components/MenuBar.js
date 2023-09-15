@@ -1,11 +1,20 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { Button, Typography, IconButton, Toolbar } from '@mui/material';
 import CustomButton from './CustomButton';
 import '../styles/theme-main.css'
+
+
 const MenuBar = (props) => {
     const tertiaryColor = props.theme.palette.tertiary.main
     const typography = props.theme.typography.subHeader.light
+
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+    
 
     const buttonLinkStyles = () => ({
             color: tertiaryColor,
@@ -35,7 +44,17 @@ const MenuBar = (props) => {
     })
     return (
         <div className="main-container padding-top-max">
-            <Toolbar className='flex-align-between toolbar-height'>
+            <Toolbar className={`flex-align-between toolbar-height`}>
+                <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} >
+                    <IconButton
+                    size="large"
+                    aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+                    onClick={toggleMenu}
+                    color={tertiaryColor}
+                    >
+                    {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                    </IconButton>
+                </div>
                 <Typography
                     variant="h6"
                     noWrap
@@ -57,11 +76,10 @@ const MenuBar = (props) => {
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
-                        color="inherit"
+                        color={tertiaryColor}
                     >
                         <MenuIcon />
                     </IconButton>
-
                 </div> */}
                 {/* <Typography
                     variant="h5"
@@ -79,19 +97,22 @@ const MenuBar = (props) => {
                 >
                     VIBENOTE
                 </Typography> */}
-                <div className='toolbar-options'>
-                    <Button href="/play-along" sx={buttonLinkStyles}>
-                        Play Along
-                    </Button>
-                    <Button href="/karaoke" sx={buttonLinkStyles}>
-                        Karaoke
-                    </Button>
-                    <Button href="/stock-music"
-                      sx={buttonLinkStyles}>
-                        Stock Music
-                    </Button>
-                    <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
-                </div>
+                <div className={`toolbar-options`} >
+                    {isMenuOpen && (
+                        <>
+                            <Button href="/play-along" sx={buttonLinkStyles}>
+                                Play Along
+                            </Button>
+                            <Button href="/karaoke" sx={buttonLinkStyles}>
+                                Karaoke
+                            </Button>
+                            <Button href="/stock-music" sx={buttonLinkStyles}>
+                                Stock Music
+                            </Button>
+                            <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
+                        </>
+                    )}
+                </div>                
             </Toolbar>
         </div>
     );

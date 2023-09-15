@@ -12,6 +12,7 @@ import OTPpage from './page/OTPpage';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMode } from './redux/reducers/themeReducer'
 import Karaoke from './page/Karaoke';
+import { useState } from 'react';
 
 
 function App() {
