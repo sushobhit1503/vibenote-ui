@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Button, Typography, IconButton, Toolbar } from '@mui/material';
 import CustomButton from './CustomButton';
 import '../styles/theme-main.css'
+import { Link } from 'react-router-dom';
 
 
 const MenuBar = (props) => {
@@ -14,7 +15,6 @@ const MenuBar = (props) => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
 
     const buttonLinkStyles = () => ({
         color: tertiaryColor,
@@ -86,10 +86,10 @@ const MenuBar = (props) => {
                     VIBENOTE
                 </Typography>
                 <div className={`toolbar-options`} >
-                    <Button href="/play-along" sx={buttonLinkStyles}>
+                    <Button component = {Link} to = '/song/play-along' sx={buttonLinkStyles} >
                         Play Along
                     </Button>
-                    <Button href="/karaoke" sx={buttonLinkStyles}>
+                    <Button component = {Link} to = '/song/karaoke' sx={buttonLinkStyles} >
                         Karaoke
                     </Button>
                     <Button href="/stock-music" sx={buttonLinkStyles}>

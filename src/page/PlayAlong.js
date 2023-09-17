@@ -17,8 +17,13 @@ import Notes from "../svgIcons/Notes.png"
 import InputSlider from "../components/InputSlider"
 import { deepPurple } from '@mui/material/colors';
 import CustomIconButton from '../components/CustomIconButton'
+import { useLocation } from 'react-router-dom'
 
 const PlayAlong = (props) => {
+    const location = useLocation();
+    const { songDetails } = location.state || {};
+
+    console.log(songDetails);
     const variant = props.theme.typography
     const shade = props.theme.palette
 
