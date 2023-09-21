@@ -16,7 +16,13 @@ const customStyles = (theme, size) => ({
     '&:hover': {
         boxShadow: '0px 0px 15px 2px rgba(0, 0, 0, 0.5)',
         backgroundColor: theme.palette.text.main,
-    },
+  },
+      '&:active': {
+    // Define styles for the active (clicked) state here
+    // For example, you can change the background color
+    backgroundColor: 'red',
+  },
+    
 })
 
 // issue: svg color fill not working
