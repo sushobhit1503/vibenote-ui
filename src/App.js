@@ -90,9 +90,10 @@ function App() {
             />
           </FormGroup> */}
           <Routes>
-            <Route path="/play-along" element={<PlayAlong theme={themeSelected} />} />
+            <Route path="/play-along" exact element={<PlayAlong theme={themeSelected} />} />
             <Route path="/song/:keyId" exact element={<SongSelection theme={themeSelected} />} />
-            <Route path="/karaoke" element={<Karaoke theme={themeSelected} />} />
+            <Route path="/karaoke" exact element={<Karaoke theme={themeSelected} />} />
+            <Route path="/login" exact element={<Login theme={themeSelected} />} />
           </Routes>
           {/* <OTPpage theme={themeSelected} /> */}
           {/* <SignUp theme={themeSelected } /> */}

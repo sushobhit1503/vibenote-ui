@@ -8,6 +8,12 @@
     justify-content: space-between;
 }
 
+.flex-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* PADDING STYLES */
 
 .padding-top-max {
@@ -19,7 +25,13 @@
 }
 
 .remove-padding {
-    padding: 0px;
+    padding: 0rem;
+}
+
+/* MARGIN STYLES */
+
+.margin-top-max {
+    margin-top: 1rem;
 }
 
 .toolbar-height {

@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from '../svgIcons/search';
 
 const customStyles = (theme) => ({
-  width: 600,
+  width: 325,
   height: 50,
   backgroundColor: theme.palette.text.main,
   '& .MuiSvgIcon-root': {

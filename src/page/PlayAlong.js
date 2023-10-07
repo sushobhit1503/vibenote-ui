@@ -28,8 +28,8 @@ const PlayAlong = (props) => {
     const shade = props.theme.palette
 
     return (
-        <div maxWidth="xl" >
-            <div style={{ display: "flex" }} spacing={2}>
+        <div className='main-container' >
+            <div style={{ display: "flex" }}>
                 <div xs={9}>
                     <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>DRUM NOTES</Typography>
                     <div sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden" }}>

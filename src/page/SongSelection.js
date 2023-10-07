@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import React from 'react'
 import UserInput from "../components/UserInput"
 import SongCard from '../components/SongCard';
@@ -11,21 +11,21 @@ const SongSelection = (props) => {
     const shade = props.theme.palette
 
     return (
-        <div>
-            <div style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
+        <div className='main-container'>
+            <div className='flex-align-center margin-top-max'>
                 <UserInput text="Search any song" icon={true} theme={props.theme} />
             </div>
-            <div spacing={2} marginTop="1rem" marginLeft="3.75rem">
+            <div className='margin-left-max'>
                 <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>MOST TRENDING SONGS</Typography>
             </div>
-            <Stack direction="row" flexWrap="wrap" justifyContent="center">
+            <div style={{display:"flex", flexWrap:"wrap"}}>
                 <SongCard theme={props.theme} keyId={ keyId} />
                 <SongCard theme={props.theme} keyId={ keyId} />
                 <SongCard theme={props.theme} keyId={ keyId} />
                 <SongCard theme={props.theme} keyId={ keyId} />
                 <SongCard theme={props.theme} keyId={ keyId} />
                 <SongCard theme={props.theme} keyId={ keyId} />
-            </Stack>
+            </div>
         </div>
     );
 };

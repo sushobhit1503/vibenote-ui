@@ -13,10 +13,10 @@ const customStyles = (theme, color) => ({
 })
 
 
-const CustomButton = ({ text, theme, color }) => {
+const CustomButton = ({ text, theme, color, destination }) => {
   return (
     <div>
-      <Button style={customStyles(theme, color)}>
+      <Button href={destination} style={customStyles(theme, color)}>
         <Typography sx={{color: theme.palette.background.main, textTransform: 'none'}} style={theme.typography.subHeader.bold}>
           {text}
         </Typography>
