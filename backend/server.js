@@ -7,7 +7,7 @@ dotenv.config()
 connectDB()
 
 const app = express()
-const port = 3001
+const port = 3003
 
 app.use('/', authRoutes)
 
