@@ -95,7 +95,11 @@ const MenuBar = (props) => {
                     <Button href="/stock-music" sx={buttonLinkStyles}>
                         Stock Music
                     </Button>
+<<<<<<< HEAD
                     <CustomButton destination="login" text="Login" theme={props.theme} color={props.theme.palette.text.main}></CustomButton>
+=======
+                    <CustomButton text="Login" theme={props.theme} color={props.theme.palette.text.main} link = "/login"></CustomButton>
+>>>>>>> d6315181677f2d77ca1e1fdd272354ed3f91c2eb
                 </div>
             </Toolbar>
         </div>

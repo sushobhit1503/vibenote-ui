@@ -17,13 +17,15 @@ const customStyles = (theme) => ({
 
 })
 
-const UserInput = ({ text, theme, countryCode, icon }) => {
+const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
+
   return (
     <div>
       <TextField
         fullWidth
         variant="outlined"
         placeholder={text}
+        onChange={(e) => onChange(e.target.value)}
         InputProps={{
           startAdornment: (
             <>
@@ -35,8 +37,8 @@ const UserInput = ({ text, theme, countryCode, icon }) => {
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default UserInput;
+export default UserInput
 
