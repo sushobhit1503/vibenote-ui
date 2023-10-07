@@ -27,7 +27,7 @@ const SignUp = (props) => {
                     <div style={{ margin: '1rem', display: "flex", flexDirection: "column", gap: "2rem" }}>
                         <UserInput text="Please enter your name" theme={props.theme} />
                         <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} />
-                        <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} />
+                        <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} link = '/login/otp'/>
                     </div>
                 </Card>
             </div>

@@ -31,9 +31,9 @@ const OTPpage = (props) => {
                                         Resend OTP in 00:29 secs
                                     </Typography>
                                 </div>
-                                <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} />
+                                <CustomButton text="Login" theme={props.theme} color={shade.tertiary.main} link = '/'/>
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                                    New to our talenthub? <span style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span>
+                                    New to our talenthub? <a href='/sign-up'><span  style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span></a>
                                 </Typography>
                             </CardContent>
                         </div>
