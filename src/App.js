@@ -92,15 +92,10 @@ function App() {
           <Routes>
             <Route path="/play-along" exact element={<PlayAlong theme={themeSelected} />} />
             <Route path="/song/:keyId" exact element={<SongSelection theme={themeSelected} />} />
-<<<<<<< HEAD
             <Route path="/karaoke" exact element={<Karaoke theme={themeSelected} />} />
             <Route path="/login" exact element={<Login theme={themeSelected} />} />
-=======
-            <Route path="/karaoke" element={<Karaoke theme={themeSelected} />} />
-            <Route path="/login" element={<Login theme={themeSelected} />} />
             <Route path="/login/otp" element={<OTPpage theme={themeSelected} />} />
             <Route path="/sign-up" element = {<SignUp theme={themeSelected} />} />
->>>>>>> d6315181677f2d77ca1e1fdd272354ed3f91c2eb
           </Routes>
           {/* <OTPpage theme={themeSelected} /> */}
           {/* <SignUp theme={themeSelected } /> */}

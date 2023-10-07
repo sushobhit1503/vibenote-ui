@@ -13,12 +13,6 @@ const customStyles = (theme, color) => ({
 })
 
 
-<<<<<<< HEAD
-const CustomButton = ({ text, theme, color, destination }) => {
-  return (
-    <div>
-      <Button href={destination} style={customStyles(theme, color)}>
-=======
 const CustomButton = ({ text, theme, color, link, onClick }) => {
 
   const handleSubmit = () => {
@@ -29,7 +23,6 @@ const CustomButton = ({ text, theme, color, link, onClick }) => {
   return (
     <div>
       <Button style={customStyles(theme, color)} href={link} onClick={handleSubmit}>
->>>>>>> d6315181677f2d77ca1e1fdd272354ed3f91c2eb
         <Typography sx={{color: theme.palette.background.main, textTransform: 'none'}} style={theme.typography.subHeader.bold}>
           {text}
         </Typography>

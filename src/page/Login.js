@@ -46,16 +46,13 @@ const Login = (props) => {
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
                                     Welcome Back!!
                                 </Typography>
-<<<<<<< HEAD
                                 <UserInput sx={{marginBottom: "1rem"}} text="Please Enter your phone number" countryCode="+91" theme={props.theme} />
                                 <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} />
-=======
                                 <Typography style={variant.subHeader_1.light} sx={{ color: shade.text.main }}>
                                     Login to continue
                                 </Typography>
                                 <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} onChange={(e) => setPhoneNumber(e)}/>
                                 <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} onClick={handleLogin}/>
->>>>>>> d6315181677f2d77ca1e1fdd272354ed3f91c2eb
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
                                     New to our talenthub? <a href='/sign-up'><span  style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span></a>
                                 </Typography>
