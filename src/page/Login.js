@@ -1,12 +1,36 @@
 import { Card, CardContent, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Illustration from "../svgIcons/Illustration.png"
 import UserInput from '../components/UserInput'
 import CustomButton from '../components/CustomButton'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Login = (props) => {
     const variant = props.theme.typography
     const shade = props.theme.palette
+    const [phoneNumber, setPhoneNumber] = useState()
+    const navigate = useNavigate()
+
+    const handleLogin = async (req, res) => {
+        if (!phoneNumber) {
+            console.log('Enter the fields')
+        }
+
+        try {
+            const config = {
+                headers: {
+                "Content-Type" : "application/json"
+                }
+            }
+            const { data } = await axios.post('http://localhost:3003/login', { phoneNumber }, config)
+            console.log(data)
+            navigate("/login/otp")
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div maxWidth="xl" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
@@ -25,8 +49,8 @@ const Login = (props) => {
                                 <Typography style={variant.subHeader_1.light} sx={{ color: shade.text.main }}>
                                     Login to continue
                                 </Typography>
-                                <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} />
-                                <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} link = "/login/otp"/>
+                                <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} onChange={(e) => setPhoneNumber(e)}/>
+                                <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} onClick={handleLogin}/>
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
                                     New to our talenthub? <a href='/sign-up'><span  style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span></a>
                                 </Typography>
