@@ -4,12 +4,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from '../svgIcons/search';
 
 const customStyles = (theme) => ({
-  width: 325,
   height: 50,
   backgroundColor: theme.palette.text.main,
   '& .MuiSvgIcon-root': {
     color: theme.palette.background.main
   },
+  borderRadius: 8,
   color: theme.palette.background.main,
   fontFamily: theme.typography.subHeader_1.family,
   fontSize: theme.typography.subHeader_1.size,

@@ -34,6 +34,10 @@
     margin-top: 1rem;
 }
 
+.margin-bottom-section {
+    margin-bottom: 2rem;
+}
+
 .toolbar-height {
     height: 3.125rem;
 }
