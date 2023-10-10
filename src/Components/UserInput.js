@@ -16,16 +16,17 @@ const customStyles = (theme) => ({
   fontWeight: theme.typography.subHeader_1.light.fontWeight,
   justifyContent: 'center',
   alignItems: 'center',
-  borderRadius: '8px'
+  borderRadius: '8px',
+  padding: '16px'
 })
 
 const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
-
+  console.log(theme.typography.subHeader_1.light.fontFamily);
   return (
     <div>
       <TextField
         fullWidth
-        variant="outlined"
+        variant="standard"
         placeholder={text}
         onChange={(e) => onChange(e.target.value)}
         InputProps={{
@@ -35,7 +36,10 @@ const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
               {countryCode && <span style={{ marginLeft: "-4px", marginRight: "8px" }}>{countryCode}</span>}
             </>
           ),
-          sx: customStyles(theme)
+          sx: {
+              ...customStyles(theme),
+          },
+          disableUnderline: true
         }}
       />
     </div>

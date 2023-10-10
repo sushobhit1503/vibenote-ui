@@ -83,7 +83,7 @@ app.use((req, res, next) => {
   next()
 })
 
-const port = 8000
+const port = 3003
 app.use('/', authRoutes)
 
 app.listen(port, () => {
