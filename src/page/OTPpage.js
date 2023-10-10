@@ -33,10 +33,10 @@ const OTPpage = (props) => {
     }
 
     return (
-        <div maxWidth="xl" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', marginTop: "-3rem" }}>
-            <div style={{ display: "flex" }} spacing={2} sx={{ width: '100%' }}>
+        <div maxWidth="xl" className='flex-align-center'>
+            <div style={{ display: "flex" }}>
                 <div xs={6}>
-                    <img src={Illustration} style={{ width: '100%' }} />
+                    <img src={Illustration}/>
                 </div>
                 <div xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>LOGIN</Typography>
@@ -46,9 +46,6 @@ const OTPpage = (props) => {
                                 <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
                                     Welcome Back!!
                                 </Typography>
-                                <Typography style={variant.subHeader_1.light} sx={{ color: shade.text.main }}>
-                                    Login to continue
-                                </Typography>
                                 <div sx={{ display: 'flex', flexDirection: "column", alignSelf: 'flex-start' }}>
                                     <UserInput text="Please enter 6 digit OTP sent" theme={props.theme} onChange={(e) => setOTP(e)}/>
                                     <Typography style={variant.subHeader_2.light} sx={{ display: "flex", color: shade.text.main, justifyContent: 'flex-end' }}>
@@ -56,9 +53,6 @@ const OTPpage = (props) => {
                                     </Typography>
                                 </div>
                                 <CustomButton text="Login" theme={props.theme} color={shade.tertiary.main} onClick={handleOTP}/>
-                                <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                                    New to our talenthub? <a href='/sign-up'><span  style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span></a>
-                                </Typography>
                             </CardContent>
                         </div>
                     </Card>
