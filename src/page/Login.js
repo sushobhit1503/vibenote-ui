@@ -33,31 +33,30 @@ const Login = (props) => {
     }
 
     return (
-        <div maxWidth="xl" className='flex-align-center main-container'>
-            <div xs={6}>
-                <img src={Illustration} />
-            </div>
-            <div xs={6}>
-                <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>LOGIN</Typography>
-                <Card className='margin-top-max' sx={{ bgcolor: `${props.theme.palette.text.main}33` }} >
-                    <div>
-                        <CardContent>
+        <div maxWidth="xl" className='flex-align-center main-container' >
+            <div style={{ display: "flex" }} spacing={2}>
+                <div xs={4}>
+                    <img src={Illustration} />
+                </div>
+                <div xs={8}>
+                    <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>LOGIN</Typography>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: '0.5rem', gap: "2rem" }} >
+                        <CardContent sx={{ p: '1rem', '&:last-child': { pb: '1rem' } }}>
                             <Typography style={variant.header.bold} sx={{ color: shade.text.main, marginBottom: "2rem" }}>
                                 Welcome Back !!
                             </Typography>
-                            <UserInput  text="Please enter your Phone Number" countryCode="+91" theme={props.theme} />
-                            <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} />
-                            <Typography style={variant.subHeader_1.light} sx={{ color: shade.text.main }}>
-                                Login to continue
-                            </Typography>
-                            <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} onChange={(e) => setPhoneNumber(e)} />
+                            <UserInput text="Please Enter your Phone Number" countryCode="+91" theme={props.theme} onChange={(e) => setPhoneNumber(e)} />
                             <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} onClick={handleLogin} />
-                            <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                                New to our talenthub? <a href='/sign-up'><span style={{ color: shade.background.main, textDecoration: 'underline' }}>Click here</span></a>
+                            <div className='flex-align-center' style={{margin: "2rem 0rem"}}>
+                                OR
+                            </div>
+                            <CustomButton text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954" onClick={handleLogin} />
+                            <Typography style={variant.header.bold} sx={{ color: shade.text.main, marginTop: "2rem" }}>
+                                New to our talenthub ? <a href='/sign-up' style={{ color: shade.tertiary.main, textDecoration: 'underline' }}>Click here</a>
                             </Typography>
                         </CardContent>
-                    </div>
-                </Card>
+                    </Card>
+                </div>
             </div>
         </div>
     )

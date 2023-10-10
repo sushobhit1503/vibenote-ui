@@ -41,12 +41,9 @@ const SignUp = (props) => {
             <div xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>SIGN UP</Typography>
                 <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }} >
-                    <CardContent>
+                    <CardContent sx={{ p:'16px', '&:last-child': { pb: '16px' }}}>
                         <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                            Welcome to world of Music!
-                        </Typography>
-                        <Typography style={variant.subHeader_1.light} sx={{ color: shade.text.main }}>
-                            Sign up to continue
+                            Welcome to world of Music !!
                         </Typography>
                     </CardContent>
                     <div style={{ margin: '1rem', display: "flex", flexDirection: "column", gap: "2rem" }}>

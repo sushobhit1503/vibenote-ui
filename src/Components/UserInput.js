@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from '../svgIcons/search';
 
 const customStyles = (theme) => ({
+  width: 'auto',
   height: 50,
   backgroundColor: theme.palette.text.main,
   '& .MuiSvgIcon-root': {
@@ -11,29 +12,35 @@ const customStyles = (theme) => ({
   },
   borderRadius: 8,
   color: theme.palette.background.main,
-  fontFamily: theme.typography.subHeader_1.family,
-  fontSize: theme.typography.subHeader_1.size,
-  fontWeight: theme.typography.subHeader_1.light.weight,
-
+  fontFamily: theme.typography.subHeader_1.light.fontFamily,
+  fontSize: theme.typography.subHeader_1.light.fontSize,
+  fontWeight: theme.typography.subHeader_1.light.fontWeight,
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: '8px',
+  padding: '16px'
 })
 
 const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
-
+  console.log(theme.typography.subHeader_1.light.fontFamily);
   return (
     <div>
       <TextField
         fullWidth
-        variant="outlined"
+        variant="standard"
         placeholder={text}
         onChange={(e) => onChange(e.target.value)}
         InputProps={{
           startAdornment: (
             <>
-              {icon && <Search style={{ marginRight: "1rem" }} />}
-              {countryCode && <span style={{ marginRight: 8 }}>{countryCode}</span>}
+              {icon && <Search style={{ marginLeft: "-4px", marginRight: "8px" }} />}
+              {countryCode && <span style={{ marginLeft: "-4px", marginRight: "8px" }}>{countryCode}</span>}
             </>
           ),
-          sx: customStyles(theme)
+          sx: {
+              ...customStyles(theme),
+          },
+          disableUnderline: true
         }}
       />
     </div>
