@@ -32,6 +32,21 @@ const Login = (props) => {
         }
     }
 
+    const handleLoginSpotify = async (req, res) => {
+        try {
+            const config = {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+            const { data } = await axios.get('http://localhost:3003/auth/spotify', config)
+            console.log(data)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div maxWidth="xl" className='flex-align-center main-container' >
             <div style={{ display: "flex" }} spacing={2}>
@@ -50,7 +65,7 @@ const Login = (props) => {
                             <div className='flex-align-center' style={{margin: "2rem 0rem"}}>
                                 OR
                             </div>
-                            <CustomButton text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954" onClick={handleLogin} />
+                            <CustomButton text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954"link="http://localhost:3003/auth/spotify"/>
                             <Typography style={variant.header.bold} sx={{ color: shade.text.main, marginTop: "2rem" }}>
                                 New to our talenthub ? <a href='/sign-up' style={{ color: shade.tertiary.main, textDecoration: 'underline' }}>Click here</a>
                             </Typography>

@@ -1,9 +1,5 @@
-const  User  = require('../model/User')
-
-const landingPage = (req, res) => {
-    // function incomplete right now
-    res.status(200).json({message: 'Landing page'})
-}
+const User = require('../model/User')
+const path = require('path')
 
 const signup = async (req, res) => {
 
@@ -62,4 +58,4 @@ const otpVerify = async (req, res) => {
 
 }
 
-module.exports = {otpVerify, signup, login, landingPage}
+module.exports = {otpVerify, signup, login}

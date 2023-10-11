@@ -4,10 +4,11 @@ const dotenv = require('dotenv')
 const connectDB = require('./db')
 const passport = require('passport')
 const SpotifyStrategy = require('passport-spotify').Strategy
-const { User } = require('./model/User')
+const User  = require('./model/User')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 dotenv.config()
 connectDB()
@@ -37,9 +38,9 @@ passport.use(
         },
         async (accessToken, refreshToken, expires_in, profile, done) => {
           try {
-              console.log(profile)
+              console.log(profile.id)
               let user = await User.findOne({ spotifyId: profile.id })
-              console.log(user)
+              console.log(`user is ${user}`)
                 
                 if (!user) {
                     user = await User.create({
@@ -67,7 +68,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser(async (spotifyId, done) => {
 
   try {
-      const user = await User.findById(spotifyId)
+      const user = await User.findOne({ spotifyId: spotifyId })
       done(null, user)
       
   } catch (error) {
@@ -84,7 +85,14 @@ app.use((req, res, next) => {
 })
 
 const port = 3003
+
+
 app.use('/', authRoutes)
+app.use('/home', (req, res) => {
+  app.use(express.static(path.join(__dirname, '../public')))
+  res.sendFile(path.resolve(__dirname, "index.html"))
+})
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

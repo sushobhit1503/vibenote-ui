@@ -6,7 +6,6 @@ const authController = require('../controllers/authControllers')
 
 router.use(express.json())
 
-router.route('/').get(authMiddleware.isAuthenticated, authController.landingPage)
 router.post('/login', authController.login)
 router.post('/login/otp', authController.otpVerify)
 router.post('/sign-up', authController.signup)
@@ -26,8 +25,8 @@ router.get(
     passport.authenticate('spotify', { failureRedirect: '/login' }),
   
     function (req, res) {
-      console.log("hell")
-      res.redirect('/')
+        console.log("hell")
+        res.redirect(302, '/home');
   }
 )
 
