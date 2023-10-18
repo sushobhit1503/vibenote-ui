@@ -1,7 +1,7 @@
 const express = require('express')
 const authRoutes = require('./routes/authRoutes')
 const dotenv = require('dotenv')
-const connectDB = require('./db')
+const connectDB = require('./config/db')
 const passport = require('passport')
 const SpotifyStrategy = require('passport-spotify').Strategy
 const User  = require('./model/User')
@@ -88,10 +88,6 @@ const port = 3003
 
 
 app.use('/', authRoutes)
-app.use('/home', (req, res) => {
-  app.use(express.static(path.join(__dirname, '../public')))
-  res.sendFile(path.resolve(__dirname, "index.html"))
-})
 
 
 app.listen(port, () => {

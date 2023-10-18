@@ -35,14 +35,6 @@ const OTPpage = (props) => {
         }
 
         try {
-            const config = {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }
-            // const { data } = await axios.post('http://localhost:3003/login/otp', { otp }, config)
-            // console.log(data)
-            // navigate("/")
             result.confirm(otp).then((result) => {
                 navigate("/")
             }).catch(err => {

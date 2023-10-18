@@ -18,22 +18,7 @@ const Login = (props) => {
         }
         else {
             localStorage.setItem("phoneNumber", phoneNumber)
-            navigate("/login/otp")
-        }
-    }
-
-    const handleLoginSpotify = async (req, res) => {
-        try {
-            const config = {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }
-            const { data } = await axios.get('http://localhost:3003/auth/spotify', config)
-            console.log(data)
-
-        } catch (error) {
-            console.log(error);
+            navigate("/otp")
         }
     }
 

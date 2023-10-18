@@ -19,6 +19,7 @@ const SignUp = (props) => {
         }
 
         try {
+            localStorage.setItem("phoneNumber", phoneNumber)
             const config = {
                 headers: {
                     "Content-Type": "application/json"
@@ -26,7 +27,7 @@ const SignUp = (props) => {
             }
             const { data } = await axios.post('http://localhost:3003/sign-up', { username, phoneNumber }, config)
             console.log(data)
-            navigate("/login/otp")
+            navigate("/otp")
 
         } catch (error) {
             console.log(error);
