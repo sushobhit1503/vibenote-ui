@@ -47,7 +47,7 @@ passport.use(
             username: profile.username,
             role: profile.role
           })
-          await newUser.save()
+          await user.save()
         }
         const authToken = generateToken(user._id)
         return done(null, { user, authToken })

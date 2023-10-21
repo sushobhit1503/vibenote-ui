@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography } from '@mui/material'
+import { Card, CardContent, Typography, Link } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Illustration from "../assets/Illustration.png"
 import UserInput from '../components/UserInput'
@@ -8,12 +8,14 @@ import { useNavigate } from 'react-router-dom'
 import { auth } from "../config/firebaseConfig"
 import firebase from '../config/firebaseConfig'
 import { backendHostUrl } from '../config/constant'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const OTPpage = (props) => {
     const variant = props.theme.typography
     const shade = props.theme.palette
     const [otp, setOTP] = useState()
     const [result, setResult] = useState()
+    const [timer, setTimer] = useState (59)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -30,6 +32,17 @@ const OTPpage = (props) => {
         })
     }, [])
 
+    useEffect(() => {
+        timer > 0 && setTimeout(() => {
+            if (timer <= 10) {
+                setTimer (String(timer - 1).padStart(2, "0"))
+            }
+            else {
+                setTimer(timer - 1)
+            }
+        }, 1000);
+      }, [timer]);
+
     const handleOTP = () => {
         const phoneNumber = localStorage.getItem("phoneNumber")
         if (!otp) {
@@ -42,7 +55,7 @@ const OTPpage = (props) => {
                     console.log(data)
                     if (data.data.message)
                         navigate('/')
-                }).catch (err => {
+                }).catch(err => {
                     console.log(err.message)
                 })
             }).catch(err => {
@@ -55,30 +68,29 @@ const OTPpage = (props) => {
     }
 
     return (
-        <div  className='flex-align-center'>
-            <div style={{ display: "flex" }}>
-                <div xs={6}>
-                    <img src={Illustration} />
-                </div>
-                <div xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>LOGIN</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }} >
-                        <div>
-                            <CardContent>
-                                <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                                    Welcome Back!!
+        <div className='flex-align-center main-container'>
+            <div>
+                <img src={Illustration} />
+            </div>
+            <div>
+                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>LOGIN</Typography>
+                <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }} >
+                    <div>
+                        <CardContent>
+                            <Link href="/login" underline="none" style={variant.header.bold} sx={{ color: shade.text.main, display:"flex", gap: "0.5rem", marginBottom: "2rem", width: "max-content" }}>
+                                <ArrowBackIcon /> Go Back
+                            </Link>
+                            <div sx={{ display: 'flex', flexDirection: "column", alignSelf: 'flex-start' }}>
+                                <UserInput text="Please enter 6 digit OTP sent" theme={props.theme} onChange={(e) => setOTP(e)} />
+                                <Typography style={variant.subHeader_2.light} sx={{ display: "flex", color: shade.text.main, justifyContent: 'flex-end', marginBottom: "2rem", marginTop: "0.25rem" }}>
+                                    {timer !== "00" && <div>Resend OTP in 00:{timer} secs</div>}
+                                    {timer === "00" && <Link href="/otp">Resend OTP</Link>}
                                 </Typography>
-                                <div sx={{ display: 'flex', flexDirection: "column", alignSelf: 'flex-start' }}>
-                                    <UserInput text="Please enter 6 digit OTP sent" theme={props.theme} onChange={(e) => setOTP(e)} />
-                                    <Typography style={variant.subHeader_2.light} sx={{ display: "flex", color: shade.text.main, justifyContent: 'flex-end' }}>
-                                        Resend OTP in 00:29 secs
-                                    </Typography>
-                                </div>
-                                <CustomButton text="Login" theme={props.theme} color={shade.tertiary.main} onClick={handleOTP} />
-                            </CardContent>
-                        </div>
-                    </Card>
-                </div>
+                            </div>
+                            <CustomButton text="Login" theme={props.theme} color={shade.tertiary.main} onClick={handleOTP} />
+                        </CardContent>
+                    </div>
+                </Card>
             </div>
             <div id="recaptcha-container"></div>
         </div>
