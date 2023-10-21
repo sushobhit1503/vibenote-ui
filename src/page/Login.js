@@ -23,7 +23,7 @@ const Login = (props) => {
                 if (result.data.error) {
                     console.log("User Doesn't exist")
                 }
-                else navigate('/otp')
+                else navigate('/otp?auth=login')
             }).catch(err => {
                 console.log(err.message)
             })
@@ -53,7 +53,7 @@ const Login = (props) => {
                         </div>
                         <CustomButton icon="spotify" text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954" link={`${backendHostUrl}/auth/spotify`} />
                         <Typography align='center' style={variant.header.bold} sx={{ color: shade.text.main, marginTop: "2rem" }}>
-                            New to our talenthub ? <a href='/sign-up' style={{ color: shade.tertiary.main, textDecoration: 'underline' }}>Click here</a>
+                            New to our talenthub ? <a href='/signup' style={{ color: shade.tertiary.main, textDecoration: 'underline' }}>Click here</a>
                         </Typography>
                     </CardContent>
                 </Card>

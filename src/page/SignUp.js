@@ -20,14 +20,8 @@ const SignUp = (props) => {
         }
         else {
             localStorage.setItem("phoneNumber", phoneNumber)
-            axios.post(`${backendHostUrl}/sign-up`, { name, phoneNumber }).then(result => {
-                if (result.data.error) {
-                    console.log("User already exists")
-                }
-                else navigate('/otp')
-            }).catch(err => {
-                console.log(err.message)
-            })
+            localStorage.setItem("name", name)
+            navigate('/otp?auth=signup')
         }
         
     }
