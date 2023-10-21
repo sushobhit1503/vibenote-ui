@@ -17,7 +17,7 @@ router.post('/otp', authController.token)
 
 router.get('/auth/spotify', passport.authenticate('spotify'),
     function (req, res) {
-        console.log('failed auth');
+        res.status(404).json({message: "The spotify login has failed"})
     })
 
 router.get('/auth/spotify/callback', (req, res, next) => {

@@ -1,37 +1,35 @@
 import { Card, CardContent, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import Illustration from "../svgIcons/Illustration.png"
+import Illustration from "../assets/Illustration.png"
 import UserInput from '../components/UserInput'
 import CustomButton from '../components/CustomButton'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { backendHostUrl } from '../config/constant'
 
 const SignUp = (props) => {
     const variant = props.theme.typography
     const shade = props.theme.palette
-    const [username, setUsername] = useState()
+    const [name, setName] = useState()
     const [phoneNumber, setPhoneNumber] = useState()
     const navigate = useNavigate()
 
     const handleSignup = async () => {
-        if (!username || !phoneNumber) {
+        if (!name || !phoneNumber) {
             console.log('Enter the fields')
         }
-
-        try {
+        else {
             localStorage.setItem("phoneNumber", phoneNumber)
-            const config = {
-                headers: {
-                    "Content-Type": "application/json"
+            axios.post(`${backendHostUrl}/sign-up`, { name, phoneNumber }).then(result => {
+                if (result.data.error) {
+                    console.log("User already exists")
                 }
-            }
-            const { data } = await axios.post('http://localhost:3003/sign-up', { username, phoneNumber }, config)
-            console.log(data)
-            navigate("/otp")
-
-        } catch (error) {
-            console.log(error);
+                else navigate('/otp')
+            }).catch(err => {
+                console.log(err.message)
+            })
         }
+        
     }
 
     return (
@@ -48,7 +46,7 @@ const SignUp = (props) => {
                         </Typography>
                     </CardContent>
                     <div style={{ margin: '1rem', display: "flex", flexDirection: "column", gap: "2rem" }}>
-                        <UserInput text="Please enter your name" theme={props.theme} onChange={(e) => setUsername(e)} />
+                        <UserInput text="Please enter your name" theme={props.theme} onChange={(e) => setName(e)} />
                         <UserInput text="Please Enter your phone number" countryCode="+91" theme={props.theme} onChange={(e) => setPhoneNumber(e)} />
                         <CustomButton text="GET OTP" theme={props.theme} color={shade.tertiary.main} onClick={handleSignup} />
                         <Typography style={variant.header.bold} sx={{ color: shade.text.main, marginTop: "2rem", textAlign: "center" }}>

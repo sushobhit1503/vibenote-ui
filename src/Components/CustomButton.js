@@ -3,7 +3,6 @@ import { Button, Typography } from '@mui/material';
 
 const customStyles = (theme, color) => ({
     height: 50,
-    width: "auto",
     borderRadius: 8,
     border: 'none',
     backgroundColor: color,

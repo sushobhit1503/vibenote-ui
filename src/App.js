@@ -1,6 +1,6 @@
 import './App.css';
 import { ThemeProvider, styled } from '@mui/material/styles';
-import { FormGroup, FormControlLabel, Switch } from '@mui/material';
+import { Switch } from '@mui/material';
 import { lightMode, darkMode } from './theme';
 import SongSelection from './page/SongSelection';
 import PlayAlong from './page/PlayAlong';
@@ -12,15 +12,17 @@ import OTPpage from './page/OTPpage';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMode } from './redux/reducers/themeReducer'
 import Karaoke from './page/Karaoke';
-import Cookies from 'js-cookie'
-import { useEffect } from 'react';
+import { Cookies , useCookies } from 'react-cookie';
 
 
 function App() {
 
   const isDarkMode = useSelector((state) => state.theme.isDarkMode)
-  // console.log(isDarkMode);
   const dispatch = useDispatch()
+  const cookies = new Cookies ()
+  const jwtToken = cookies.get("user")
+
+  console.log(jwtToken);
 
   const toggleTheme = () => {
     dispatch(toggleMode())
@@ -80,16 +82,11 @@ function App() {
     },
   }));
 
-  const userData = Cookies.get('user')
-
-  if (userData) {
-    const { user, authToken } = JSON.parse(userData)
-
-    console.log('User:', user);
-    console.log('AuthToken:', authToken)
-  } else {
-    console.log('Cookie does not exist')
-  }
+  // if (userData) {
+  //   const { user, authToken } = JSON.parse(userData)
+  // } else {
+  //   console.log('Cookie does not exist')
+  // }
 
 
   return (
@@ -110,9 +107,6 @@ function App() {
             <Route path="/otp" element={<OTPpage theme={themeSelected} />} />
             <Route path="/sign-up" element = {<SignUp theme={themeSelected} />} />
           </Routes>
-          {/* <OTPpage theme={themeSelected} /> */}
-          {/* <SignUp theme={themeSelected } /> */}
-          {/* <Login theme={themeSelected} /> */}
         </div>
       </ThemeProvider>
     </div>

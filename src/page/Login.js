@@ -1,13 +1,13 @@
 import { Card, CardContent, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import Illustration from "../svgIcons/Illustration.png"
+import Illustration from "../assets/Illustration.png"
 import UserInput from '../components/UserInput'
 import CustomButton from '../components/CustomButton'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { backendHostUrl } from '../config/constant'
 
 const Login = (props) => {
-    console.log("login");
     const variant = props.theme.typography
     const shade = props.theme.palette
     const [phoneNumber, setPhoneNumber] = useState()
@@ -19,12 +19,19 @@ const Login = (props) => {
         }
         else {
             localStorage.setItem("phoneNumber", phoneNumber)
-            navigate("/otp")
+            axios.post(`${backendHostUrl}/login`, { phoneNumber }).then(result => {
+                if (result.data.error) {
+                    console.log("User Doesn't exist")
+                }
+                else navigate('/otp')
+            }).catch(err => {
+                console.log(err.message)
+            })
         }
     }
 
     return (
-        <div maxWidth="xl" className='flex-align-center main-container' >
+        <div className='flex-align-center main-container' >
             <div style={{ display: "flex" }} spacing={2}>
                 <div xs={4}>
                     <img src={Illustration} />
@@ -41,7 +48,7 @@ const Login = (props) => {
                             <div className='flex-align-center' style={{ margin: "2rem 0rem" }}>
                                 OR
                             </div>
-                            <CustomButton text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954" link="http://localhost:3003/auth/spotify" />
+                            <CustomButton text="LOGIN WITH SPOTIFY" theme={props.theme} color="#1DB954" link={`${backendHostUrl}/auth/spotify`} />
                             <Typography style={variant.header.bold} sx={{ color: shade.text.main, marginTop: "2rem" }}>
                                 New to our talenthub ? <a href='/sign-up' style={{ color: shade.tertiary.main, textDecoration: 'underline' }}>Click here</a>
                             </Typography>

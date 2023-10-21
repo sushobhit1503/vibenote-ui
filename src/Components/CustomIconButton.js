@@ -27,7 +27,6 @@ const customStyles = (theme, size) => ({
 
 // issue: svg color fill not working
 const CustomIconButton = ({ theme, icon, size }) => {
-  console.log(size);
   return (
     <div>
           <IconButton sx={customStyles(theme, size)}>

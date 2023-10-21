@@ -13,7 +13,7 @@ import Mute from "../svgIcons/mute"
 import Trim from "../svgIcons/trim"
 import Loop from "../svgIcons/loop"
 import CurrentTrack from "../svgIcons/currentTrack"
-import Notes from "../svgIcons/Notes.png"
+import Notes from "../assets/Notes.png"
 import InputSlider from "../components/InputSlider"
 import { deepPurple } from '@mui/material/colors';
 import CustomIconButton from '../components/CustomIconButton'

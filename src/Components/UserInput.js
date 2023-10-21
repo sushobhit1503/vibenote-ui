@@ -4,7 +4,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from '../svgIcons/search';
 
 const customStyles = (theme) => ({
-  width: 'auto',
   height: 50,
   backgroundColor: theme.palette.text.main,
   '& .MuiSvgIcon-root': {
@@ -22,7 +21,6 @@ const customStyles = (theme) => ({
 })
 
 const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
-  console.log(theme.typography.subHeader_1.light.fontFamily);
   return (
     <div>
       <TextField
