@@ -1,13 +1,14 @@
 const User = require('../model/User')
 const path = require('path')
 const generateToken = require('../config/generateToken')
-const auth = require("firebase/auth");
 
-
+const home = async (req, res) => {
+    console.log("home")
+}
 const signup = async (req, res) => {
 
     try {
-        const { username, phoneNumber, spotifyId } = req.body
+        const { username, phoneNumber } = req.body
         const userExists = await User.findOne({ phoneNumber });
 
         if (userExists) {
@@ -16,7 +17,6 @@ const signup = async (req, res) => {
         }
         
         const newUser = new User({
-            spotifyId,
             username,
             phoneNumber,
         })
@@ -27,7 +27,7 @@ const signup = async (req, res) => {
         
 } catch (error) {
     console.error(error)
-    return res.render('signup', { error: 'Registration failed' })
+    return res.json({message: 'Error signing up!!'})
 }
 }
 
@@ -40,9 +40,6 @@ const login = async (req, res) => {
             return res.status(404).json({ error: 'User not found' })
         }
 
-        const authToken = generateToken(user._id)
-        return res.json({ authToken })
-
     } catch (error) {
         console.error(error)
         return res.status(500).json({ error: 'Error Occured! Try again!' })
@@ -50,4 +47,16 @@ const login = async (req, res) => {
     
 }
 
-module.exports = { signup, login}
+const token = async (req, res) => {
+    const { phoneNumber } = req.body
+
+    const user = await User.findOne({ phoneNumber })
+    
+    const authToken = generateToken(user._id)
+    const userData = { user, authToken }
+
+    res.cookie('user', JSON.stringify(userData), { httpOnly: true })
+    res.json({message: 'cookie sent'})
+}
+
+module.exports = { signup, login, home, token}

@@ -21,6 +21,7 @@ const Karaoke = (props) => {
     const variant = props.theme.typography
     const shade = props.theme.palette
 
+
   return (
     <Container maxWidth="xl">
         <Grid container spacing={2}>

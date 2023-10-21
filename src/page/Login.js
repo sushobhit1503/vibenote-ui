@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Login = (props) => {
+    console.log("login");
     const variant = props.theme.typography
     const shade = props.theme.palette
     const [phoneNumber, setPhoneNumber] = useState()

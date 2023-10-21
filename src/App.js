@@ -12,7 +12,8 @@ import OTPpage from './page/OTPpage';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMode } from './redux/reducers/themeReducer'
 import Karaoke from './page/Karaoke';
-import { useState } from 'react';
+import Cookies from 'js-cookie'
+import { useEffect } from 'react';
 
 
 function App() {
@@ -78,6 +79,18 @@ function App() {
       borderRadius: 20 / 2,
     },
   }));
+
+  const userData = Cookies.get('user')
+
+  if (userData) {
+    const { user, authToken } = JSON.parse(userData)
+
+    console.log('User:', user);
+    console.log('AuthToken:', authToken)
+  } else {
+    console.log('Cookie does not exist')
+  }
+
 
   return (
     <div>

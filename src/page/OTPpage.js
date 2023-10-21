@@ -30,13 +30,21 @@ const OTPpage = (props) => {
     }, [])
 
     const handleOTP = async () => {
+        const phoneNumber = localStorage.getItem("phoneNumber")
         if (!otp) {
             console.log('Enter the OTP')
         }
 
         try {
-            result.confirm(otp).then((result) => {
-                navigate("/")
+            result.confirm(otp).then(async (result) => {
+                const config = {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+                const { data } = await axios.post('http://localhost:3003/otp', { phoneNumber }, config)
+                console.log(data);
+                navigate('/')
             }).catch(err => {
                 console.log(err.message);
             })

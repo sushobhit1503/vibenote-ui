@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const path = require('path')
+const generateToken = require('./config/generateToken')
 
 dotenv.config()
 connectDB()
@@ -40,7 +41,8 @@ passport.use(
           try {
               console.log(profile.id)
               let user = await User.findOne({ spotifyId: profile.id })
-              console.log(`user is ${user}`)
+            
+              const authToken = generateToken(user._id)
                 
                 if (!user) {
                     user = await User.create({
@@ -50,7 +52,7 @@ passport.use(
                     })
                 }
 
-                return done(null, user)
+            return done(null, { user, authToken })
 
             } catch (error) {
                 return done(error)
