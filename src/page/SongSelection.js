@@ -23,6 +23,7 @@ const SongSelection = (props) => {
     const trendSearch = async () => {
         try {
             const response = await axios.get(`${backendHostUrl}/song/trending`)
+            console.log(response.data.message.body.track_list);
             setSearchResults(response.data.message.body.track_list)
         }
         catch (error) {

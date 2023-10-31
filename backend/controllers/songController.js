@@ -21,7 +21,7 @@ const searchTrack = async (req, res) => {
     const q_track_artist = req.query.q_track_artist
     const api = process.env.apiKey
     const s_track_rating = 'desc'
-    const baseURL = `http://api.musixmatch.com/ws/1.1/track.search?apikey=${api}&q_track_artist=${q_track_artist}&s_track_rating=${s_track_rating}&f_lyrics_language=en`
+    const baseURL = `http://api.musixmatch.com/ws/1.1/track.search?apikey=${api}&q_track_artist=${q_track_artist}&s_track_rating=${s_track_rating}&s_artist_rating=desc&f_lyrics_language=en&f_has_lyrics=1`
 
     const redisClient = await redisConnect()
 
