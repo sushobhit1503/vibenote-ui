@@ -12,6 +12,8 @@ const SongCard = (props) => {
     }
     
     const navigate = useNavigate()
+
+    // handling the selection and fetching lyrics
     const handleCard = async () => {
 
         try {

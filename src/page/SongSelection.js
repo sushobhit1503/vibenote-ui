@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import UserInput from "../components/UserInput"
 import SongCard from '../components/SongCard';
 import { useParams } from 'react-router-dom';
@@ -15,34 +15,42 @@ const SongSelection = (props) => {
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
 
+    // trending songs display
+    useEffect(() => {
+        trendSearch()
+    }, [])
 
-    const searchSongs = async () => {
+    const trendSearch = async () => {
+        try {
+            const response = await axios.get(`${backendHostUrl}/song/trending`)
+            setSearchResults(response.data.message.body.track_list)
+        }
+        catch (error) {
+            console.error('Error fetching for trending songs:', error)
+        }
+    }
+
+    // to fetch songs on querying
+    const searchSongs = async (e) => {
+        setSearchQuery(e)  
     try {
       const response = await axios.get(`${backendHostUrl}/song/searchSongs`, {
         params: {
           q_track_artist: searchQuery,
-          page_size: 6,
         },
       })
-        console.log(response.data.message.body.track_list);
-        setSearchResults(response.data.message.body.track_list)
+        console.log(response);
+        setSearchResults(response.data)
         
     } catch (error) {
       console.error('Error searching for songs:', error)
     }
   }
 
-    const handleKeyPress = (e) => {
-        console.log(searchQuery);
-        if (e.key === 'Enter') {
-            searchSongs()
-        }   
-    }
-
     return (
         <div className='main-container'>
             <div className='flex-align-center margin-top-max'>
-                <UserInput text="Search any song" icon={true} theme={props.theme} onChange={(e) => setSearchQuery(e)} onKeyPress={ handleKeyPress} />
+                <UserInput text="Search any song" icon={true} theme={props.theme} onChange={(e) => searchSongs(e)} />
             </div>
             <div className='margin-left-max'>
                 <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>MOST TRENDING SONGS</Typography>
