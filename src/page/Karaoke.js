@@ -23,6 +23,7 @@ const Karaoke = (props) => {
     const location = useLocation();
     const variant = props.theme.typography
     const shade = props.theme.palette
+
     const { songDetails } = location.state
 
   return (
@@ -30,9 +31,12 @@ const Karaoke = (props) => {
         <Grid container spacing={2}>
               <Grid item xs={9}>
                   <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>LYRICS</Typography>
-                    <Box sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden" }}>
-                        {songDetails.lyricsData.lyricsBody}
-                    </Box>
+                  <Box sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden", whiteSpace: "pre-line" }}>
+                      <Typography style={variant.subHeader.light} sx={{color: shade.tertiary.main}}>
+                          {songDetails.lyricsData.lyricsBody}
+                      </Typography>    
+                  </Box>
+                  
                     <InputSlider theme={props.theme} width='100%' height='0.313rem' thumbSize='1rem'/>
                     <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
                         3:26 / 5:26
