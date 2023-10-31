@@ -1,5 +1,6 @@
 const express = require('express')
 const authRoutes = require('./routes/authRoutes')
+const songMetadataRoutes = require('./routes/songMetadataRoutes')
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
 const passport = require('passport')
@@ -88,6 +89,7 @@ const port = 3003
 
 
 app.use('/', authRoutes)
+app.use('/song', songMetadataRoutes)
 
 
 app.listen(port, () => {

@@ -23,13 +23,14 @@ const customStyles = (theme) => ({
   padding: '16px'
 })
 
-const UserInput = ({ text, theme, countryCode, icon, onChange }) => {
+const UserInput = ({ text, theme, countryCode, icon, onChange, onKeyPress }) => {
   return (
     <div>
       <TextField
         variant="standard"
         placeholder={text}
         onChange={(e) => onChange(e.target.value)}
+        onKeyPress={(e) => onKeyPress(e)}
         InputProps={{
           startAdornment: (
             <>

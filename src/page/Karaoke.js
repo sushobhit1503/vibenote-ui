@@ -16,11 +16,14 @@ import Flat from '../svgIcons/flat'
 import Metronome from '../svgIcons/metronome'
 import CurrentTrack from '../svgIcons/currentTrack'
 import Trim from '../svgIcons/trim'
+import { useLocation } from 'react-router-dom'
 
 const Karaoke = (props) => {
+    console.log(props);
+    const location = useLocation();
     const variant = props.theme.typography
     const shade = props.theme.palette
-
+    const { songDetails } = location.state
 
   return (
     <Container maxWidth="xl">
@@ -28,7 +31,7 @@ const Karaoke = (props) => {
               <Grid item xs={9}>
                   <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>LYRICS</Typography>
                     <Box sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden" }}>
-                        {/* lyrics */}
+                        {songDetails.lyricsData.lyricsBody}
                     </Box>
                     <InputSlider theme={props.theme} width='100%' height='0.313rem' thumbSize='1rem'/>
                     <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
