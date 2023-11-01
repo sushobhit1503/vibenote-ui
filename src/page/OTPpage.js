@@ -101,7 +101,7 @@ const OTPpage = (props) => {
                                 <UserInput text="Please enter 6 digit OTP sent" theme={props.theme} onChange={(e) => setOTP(e)} />
                                 <Typography style={variant.subHeader_2.light} sx={{ display: "flex", color: shade.text.main, justifyContent: 'flex-end', marginBottom: "2rem", marginTop: "0.25rem" }}>
                                     {timer !== "00" && <div>Resend OTP in 00:{timer} secs</div>}
-                                    {timer === "00" && <Link href="/otp">Resend OTP</Link>}
+                                    {timer === "00" && <Link href={`/otp?auth=${searchParams.get("auth")}`}>Resend OTP</Link>}
                                 </Typography>
                             </div>
                             <CustomButton text={searchParams.get("auth") === "login" ? "Login" : "Sign Up"} theme={props.theme} color={shade.tertiary.main} onClick={handleOTP} />

@@ -22,7 +22,7 @@ function App() {
   const cookies = new Cookies ()
   const jwtToken = cookies.get("user")
 
-  console.log(jwtToken);
+  console.log(cookies);
 
   const toggleTheme = () => {
     dispatch(toggleMode())

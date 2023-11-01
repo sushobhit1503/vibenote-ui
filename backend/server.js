@@ -44,7 +44,7 @@ passport.use(
         if (!user) {
           user = await User.create({
             spotifyId: profile.id,
-            username: profile.username,
+            name: profile.diplayName,
             role: profile.role
           })
           await user.save()

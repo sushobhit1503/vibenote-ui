@@ -28,7 +28,7 @@ router.get('/auth/spotify/callback', (req, res, next) => {
         }
 
         res.cookie('user', JSON.stringify( userData ), { httpOnly: true })
-
+            
         res.redirect('http://localhost:3000')
     })(req, res, next)
 })
