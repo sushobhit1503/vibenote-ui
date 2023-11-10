@@ -20,4 +20,4 @@ const Backward = (props) => (
   </svg>
 );
 
-export { Backward };
+export default Backward ;
