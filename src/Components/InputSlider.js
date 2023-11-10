@@ -16,7 +16,7 @@ const CustomSliderStyles = (theme, width, height, thumbSize) => ({
       height: height
     },
     '& .MuiSlider-rail': {
-      color: `rgba(${theme.palette.text.main}, 0.2)`,
+      backgroundColor: `rgba(${theme.palette.text.main}, 0.2)`,
       width: width,
       height: height
     },

@@ -2,12 +2,13 @@ import { Avatar, Box, Card, CardContent, Container, Grid, Stack, Typography } fr
 import React from 'react'
 import InputSlider from '../components/InputSlider'
 import Drum from '../svgIcons/drum'
-import {Piano } from '@mui/icons-material'
+import { Piano } from '@mui/icons-material'
 import Acoustic from '../svgIcons/acoustic'
 import Electric from '../svgIcons/electric'
 import CustomIconButton from '../components/CustomIconButton'
 import Mute from '../svgIcons/mute'
 import { Vocals } from '../svgIcons/vocals'
+import UserInput from "../components/UserInput"
 import Minus from '../svgIcons/minus'
 import Plus from '../svgIcons/plus'
 import { deepPurple } from '@mui/material/colors';
@@ -29,119 +30,122 @@ import Loop from '../svgIcons/loop'
 
 const Karaoke = (props) => {
     console.log(props);
-    const location = useLocation();
+    // const location = useLocation();
     const variant = props.theme.typography
     const shade = props.theme.palette
 
-    const { songDetails } = location.state
+    // const { songDetails } = location.state
 
-  return (
-    <Container maxWidth="xl">
-        <Grid container spacing={2}>
-              <Grid item xs={9} >
-                  <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>LYRICS</Typography>
-                  <Box sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden", whiteSpace: "pre-line" }}>
-                      <Typography style={variant.subHeader.light} sx={{color: shade.tertiary.main}}>
-                          {songDetails.lyricsData.lyricsBody}
-                      </Typography>    
-                  </Box>
-                  <InputSlider theme={props.theme} width='100%' height='0.313rem' thumbSize='1rem' />
-                  <Box sx={{ maxHeight: "31.25rem", bgcolor: `${props.theme.palette.text.main}33`, marginTop: '-16px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px', display: 'flex', paddingBottom: '8px', display:'flex', flexDirection:'column' }}>
-                      
-                        <Typography style={variant.subHeader_2.light} sx={{ color: shade.text.main, marginBottom: '1rem', marginLeft:'16px' }}>
+    return (
+        <Container maxWidth="xl">
+            <div className='flex-align-center margin-top-max'>
+                <UserInput text="Search any song" icon={true} theme={props.theme} />
+            </div>
+            <Grid container spacing={2}>
+                <Grid item xs={9} >
+                    <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>LYRICS</Typography>
+                    <Box sx={{ maxHeight: "31.25rem", overflow: "scroll", overflowX: "hidden", whiteSpace: "pre-line" }}>
+                        <Typography style={variant.subHeader.light} sx={{ color: shade.tertiary.main }}>
+                            {/* {songDetails.lyricsData.lyricsBody} */}
+                        </Typography>
+                    </Box>
+                    <InputSlider theme={props.theme} width='100%' height='0.313rem' thumbSize='1rem' />
+                    <Box sx={{ maxHeight: "31.25rem", bgcolor: `${props.theme.palette.text.main}33`, marginTop: '-16px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px', display: 'flex', paddingBottom: '8px', display: 'flex', flexDirection: 'column' }}>
+
+                        <Typography style={variant.subHeader_2.light} sx={{ color: shade.text.main, marginBottom: '1rem', marginLeft: '16px' }}>
                             3:26 / 5:26
-                      </Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                              <div style={{ marginRight: '16px' }}><Backward /></div>
-                              <div style={{ marginRight: '16px' }}><CustomIconButton theme={props.theme} icon={<Play />} size='3.5rem' sx={{ width: '1rem', margin: "0 1rem" }}></CustomIconButton></div>
-                              <div style={{ marginRight: '16px' }}><Forward /></div>
-                        </Box>
+                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ marginRight: '16px' }}><Backward /></div>
+                                <div style={{ marginRight: '16px' }}><CustomIconButton theme={props.theme} icon={<Play />} size='3.5rem' sx={{ width: '1rem', margin: "0 1rem" }}></CustomIconButton></div>
+                                <div style={{ marginRight: '16px' }}><Forward /></div>
+                            </Box>
 
-                        <Box sx={{ display: 'inline-flex', justifyContent: 'flex-end', alignItems:'center' }}>
-                            <div style={{ marginRight: '16px' }}><Loop /></div>
-                            <div style={{ marginRight: '16px' }}><Download /></div>
-                            <div style={{ marginRight: '16px' }}><Language /></div>
-                            <div style={{ marginRight: '16px' }}><Settings /></div>
-                            <div style={{ marginRight: '16px' }}><Expand /></div>
+                            <Box sx={{ display: 'inline-flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                                <div style={{ marginRight: '16px' }}><Loop /></div>
+                                <div style={{ marginRight: '16px' }}><Download /></div>
+                                <div style={{ marginRight: '16px' }}><Language /></div>
+                                <div style={{ marginRight: '16px' }}><Settings /></div>
+                                <div style={{ marginRight: '16px' }}><Expand /></div>
+                            </Box>
                         </Box>
-                      </Box>
-                  </Box>
+                    </Box>
                     <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>
-                          {songDetails.songData.trackName} | {songDetails.songData.artistName} | {songDetails.songData.albumName}
-                  </Typography>
+                        {/* {songDetails.songData.trackName} | {songDetails.songData.artistName} | {songDetails.songData.albumName} */}
+                    </Typography>
                     <Typography style={variant.header.bold} sx={{ color: shade.tertiary.main }}>
-                          T-Series
-                  </Typography>
-                
-              </Grid>
+                        T-Series
+                    </Typography>
 
-              <Grid item xs={3}>
-                  <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>SONG CONTROLS</Typography>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem"}}>
-                        <Box> 
+                </Grid>
+
+                <Grid item xs={3}>
+                    <Typography style={variant.header.bold} sx={{ color: shade.text.main }}>SONG CONTROLS</Typography>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem", borderRadius: "0.5rem" }}>
+                        <Box>
                             <CardContent>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Track Instruments
                                 </Typography>
                             </CardContent>
                         </Box>
                         <Box sx={{ margin: "-1rem 0px 1rem 1rem" }} display='flex' flexDirection='column' gap='1rem'>
-                            <Box display="flex" gap='1rem'  alignItems='center'>
-                              <CustomIconButton theme={props.theme} icon={<Mute />} size='2rem' sx={{ width: '1rem', marginRight: "1rem" }}></CustomIconButton>
-                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <Box display="flex" gap='1rem' alignItems='center'>
+                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2.25rem' sx={{ width: '1rem', marginRight: "1rem" }}></CustomIconButton>
+                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                                 <CustomIconButton theme={props.theme} icon={<Vocals />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                             </Box>
-                            <Box display="flex" gap='1rem'  alignItems='center'>
-                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
-                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <Box display="flex" gap='1rem' alignItems='center'>
+                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2.25rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                                 <CustomIconButton theme={props.theme} icon={<Drum />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                             </Box>
-                            <Box display="flex" gap='1rem'  alignItems='center'>
-                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
-                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <Box display="flex" gap='1rem' alignItems='center'>
+                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2.25rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                                 <CustomIconButton theme={props.theme} icon={<Piano />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                             </Box>
-                            <Box display="flex" gap='1rem'  alignItems='center'>
-                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
-                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <Box display="flex" gap='1rem' alignItems='center'>
+                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2.25rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                                 <CustomIconButton theme={props.theme} icon={<Acoustic />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                             </Box>
-                            <Box display="flex" gap='1rem'  alignItems='center'>
-                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
-                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <Box display="flex" gap='1rem' alignItems='center'>
+                                <CustomIconButton theme={props.theme} icon={<Mute />} size='2.25rem' sx={{ marginRight: "1rem" }}></CustomIconButton>
+                                <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                                 <CustomIconButton theme={props.theme} icon={<Electric />} sx={{ marginRight: "1rem" }}></CustomIconButton>
                             </Box>
                         </Box>
-                  </Card>
-                  <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem"}} >
+                    </Card>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }} >
                         <Box sx={{ display: "flex", justifyContent: "between" }}>
                             <Stack direction="row" sx={{ margin: "1rem 0px 1rem 1rem" }} justifyContent="space-between">
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Transpose
                                 </Typography>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     G#
                                 </Typography>
                             </Stack>
                         </Box>
                         <Stack spacing={2} direction="row" sx={{ margin: "0px 0px 1rem 1rem" }} alignItems="center">
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
-                              <Flat/>
+                                <Flat />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Sharp />
                             </Avatar>
                         </Stack>
                     </Card>
-                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem"}}>
+                    <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem" }}>
                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                             <Stack direction="row" sx={{ margin: "1rem 0px 1rem 1rem" }} justifyContent="space-between">
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     Tempo
                                 </Typography>
-                                <Typography style={variant.subHeader.bold} sx={{color: shade.text.main}}>
+                                <Typography style={variant.subHeader.bold} sx={{ color: shade.text.main }}>
                                     50%
                                 </Typography>
                             </Stack>
@@ -150,12 +154,12 @@ const Karaoke = (props) => {
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Minus />
                             </Avatar>
-                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem'/>
+                            <InputSlider theme={props.theme} width='7.25rem' height='0.188rem' thumbSize='0.5rem' />
                             <Avatar sx={{ bgcolor: deepPurple[500] }}>
                                 <Plus />
                             </Avatar>
                         </Stack>
-                  </Card>
+                    </Card>
                     {/* <Card sx={{ bgcolor: `${props.theme.palette.text.main}33`, marginTop: "1rem"}}>
                         <Box sx={{ display: "flex", justifyContent: "between" }}>
                             <CardContent >
@@ -174,11 +178,11 @@ const Karaoke = (props) => {
                             </Box>
                         </Stack>
                     </Card> */}
-                  
-              </Grid>
-        </Grid>
-    </Container>
-  )
+
+                </Grid>
+            </Grid>
+        </Container>
+    )
 }
 
 export default Karaoke

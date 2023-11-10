@@ -57,7 +57,7 @@ const SongSelection = (props) => {
                 <Typography style={variant.subHeader_1.bold} sx={{color: shade.text.main}}>MOST TRENDING SONGS</Typography>
             </div>
             <div style={{display:"flex", flexWrap:"wrap", justifyContent:'center'}}>
-                {searchResults.map((result) => (
+                {searchResults?.map((result) => (
                     <SongCard
                         keyId={keyId}
                         trackId={result.track.track_id}
