@@ -7,6 +7,7 @@ router.use(express.json())
 
 router.get('/searchSongs', songController.searchTrack)
 router.get('/lyrics', songController.getLyrics)
+router.get('/language', songController.changeLanguage)
 router.get('/trending', songController.getTrending)
 
 module.exports = router

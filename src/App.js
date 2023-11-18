@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMode } from './redux/reducers/themeReducer'
 import Karaoke from './page/Karaoke';
 import { Cookies , useCookies } from 'react-cookie';
+import Pricing from './page/Pricing';
 
 
 function App() {
@@ -105,7 +106,8 @@ function App() {
             <Route path="/karaoke" exact element={<Karaoke theme={themeSelected} />} />
             <Route path="/login" exact element={<Login theme={themeSelected} />} />
             <Route path="/otp" element={<OTPpage theme={themeSelected} />} />
-            <Route path="/signup" element = {<SignUp theme={themeSelected} />} />
+            <Route path="/signup" element={<SignUp theme={themeSelected} />} />
+            <Route path="/" element={<Pricing theme={themeSelected} />} />
           </Routes>
         </div>
       </ThemeProvider>

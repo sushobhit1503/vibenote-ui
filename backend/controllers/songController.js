@@ -54,7 +54,7 @@ const searchTrack = async (req, res) => {
 
 // for getting lyrics of the selected song card
 const getLyrics = async (req, res) => {
-    const track_id = req.query.trackId
+    const track_id = req.query.track_id
     const api = process.env.apiKey
     const baseURL = `http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${api}&track_id=${track_id}`
 
@@ -81,6 +81,25 @@ const getTrending = async (req, res) => {
     }
 }
 
+//change language
+
+const changeLanguage = async (req, res) => {
+    const api = process.env.apiKey
+    const commontrack_id = req.query.track_id
+    const selected_language = req.query.selected_language
+
+    const baseURL = `http://api.musixmatch.com/ws/1.1/track.lyrics.translation.get?apikey=${api}commontrack_id=${commontrack_id}selected_language=${selected_language}`
+
+    try {
+        const response = await axios.get(baseURL)
+        console.log(response);
+        res.json(response.data)
+    } catch (error) {
+        console.error('Error changing language', error)
+        res.status(500).json({ error: 'Internal server error' })
+    }
+}
 
 
-module.exports = {searchTrack, getLyrics, getTrending}
+
+module.exports = {searchTrack, getLyrics, getTrending, changeLanguage}
